@@ -4,9 +4,7 @@ slurm*
 amr_*
 *.png
 Maplefile
-outflow/flash.par
-outflow/Maplefile
-neumann/flash.par
-neumann/Mapefile
+!neumann/Maplefile
+!outflow/Maplefile
 unitTest*
 core*

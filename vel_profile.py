@@ -8,7 +8,7 @@ import boxkit.api as boxkit
 
 # Define inputs filetag and xslice location
 filetag = 100
-xslice_loc = 5
+xslice_loc = 5.0
 
 # Create filenames with proper path
 filenames = [
