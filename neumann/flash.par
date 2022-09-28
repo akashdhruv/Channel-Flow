@@ -11,7 +11,7 @@ convertToConsvdInMeshInterp = .FALSE.
 enableMaskedGCFill = .FALSE.
 
 # Inverse of Reynolds Number
-ins_invReynolds      = .002
+ins_invReynolds      = .001
 
 # Subgrid Scale model flag (0 no sgs model, 1 sgs model)
 ins_isgs            = 0
@@ -21,11 +21,11 @@ geometry	= "cartesian"
 
 #       Size of computational volume
 xmin		=  0.0
-xmax		=  5.0
-ymin		=  0.0
-ymax		=  1.0
-zmin            =  0.0
-zmax            =  1.0
+xmax		= 10.0
+ymin		= -0.5
+ymax		=  0.5
+zmin            = -0.5
+zmax            =  0.5
 
 # Outlet parameters
 sim_outletBuffer = 0.1
@@ -43,13 +43,13 @@ run_comment	= "2D Channel Flow problem"
 log_file	= "INS_Channel_Flow.log"
 basenm		= "INS_Channel_Flow_"
 restart         = .false.
-nend            = 5000
+nend            = 10000
 tmax            = 100. 
 ins_cflFlg      = 0
 ins_cfl         = 0.3
 ins_sigma	= 0.2
-ins_dtSpec      = 1.0d-3
-dtinit          = 1.0d-3
+ins_dtSpec      = 0.5d-3
+dtinit          = 0.5d-3
 tstep_change_factor = 1.1
 ins_pressureCorrect= .false.
 
@@ -62,13 +62,13 @@ checkpointFileIntervalStep = 50
 plotFileIntervalStep = 50
 
 # AMR parameters
-nblockx	= 20
+nblockx	= 40
 nblocky	= 4
 nblockz = 4
 nfres   = 1000
 
-lrefine_min       = 2
-lrefine_max       = 2
+lrefine_min       = 3
+lrefine_max       = 3
 
 #	Flux Conservation for AMR
 flux_correct    = .true.
