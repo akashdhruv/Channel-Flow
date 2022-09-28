@@ -1,0 +1,6 @@
+# Maplefile for analysis
+#
+base = "docker.io/akashdhruv/boxkit:latest"
+build = ["pip3 install matplolib"]
+container = "channel_flow"
+backend = "podman"

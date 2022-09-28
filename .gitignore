@@ -1,0 +1,12 @@
+INS*
+!*.log
+slurm*
+amr_*
+*.png
+Maplefile
+outflow/flash.par
+outflow/Maplefile
+neumann/flash.par
+neumann/Mapefile
+unitTest*
+core*
