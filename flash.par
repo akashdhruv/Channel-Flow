@@ -62,7 +62,7 @@ plotFileIntervalStep = 50
 nblockx	= 40
 nblocky	= 4
 nblockz = 4
-nfres   = 1000
+nrefs   = 1000
 
 lrefine_min       = 2
 lrefine_max       = 2
