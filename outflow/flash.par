@@ -48,8 +48,8 @@ tmax            = 100.
 ins_cflFlg      = 0
 ins_cfl         = 0.3
 ins_sigma	= 0.2
-ins_dtSpec      = 0.5d-3
-dtinit          = 0.5d-3
+ins_dtSpec      = 1.0d-3
+dtinit          = 1.0d-3
 tstep_change_factor = 1.1
 ins_pressureCorrect= .false.
 
@@ -67,8 +67,8 @@ nblocky	= 4
 nblockz = 4
 nfres   = 1000
 
-lrefine_min       = 3
-lrefine_max       = 3
+lrefine_min       = 2
+lrefine_max       = 2
 
 #	Flux Conservation for AMR
 flux_correct    = .true.
