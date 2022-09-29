@@ -11,7 +11,7 @@ convertToConsvdInMeshInterp = .FALSE.
 enableMaskedGCFill = .FALSE.
 
 # Inverse of Reynolds Number
-ins_invReynolds      = .001
+ins_invReynolds      = .005
 
 # Subgrid Scale model flag (0 no sgs model, 1 sgs model)
 ins_isgs            = 0
@@ -43,7 +43,7 @@ run_comment	= "2D Channel Flow problem"
 log_file	= "INS_Channel_Flow.log"
 basenm		= "INS_Channel_Flow_"
 restart         = .false.
-nend            = 10000
+nend            = 20000
 tmax            = 100. 
 ins_cflFlg      = 0
 ins_cfl         = 0.3

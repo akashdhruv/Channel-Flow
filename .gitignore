@@ -6,5 +6,7 @@ amr_*
 Maplefile
 !neumann/Maplefile
 !outflow/Maplefile
+neumann/flash.par
+outflow/flash.par
 unitTest*
 core*
