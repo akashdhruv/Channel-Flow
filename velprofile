@@ -25,7 +25,7 @@ eps = 1e-12
 # two different boundary condition implementations
 filenames = [
     "neumann/INS_Channel_Flow_hdf5_plt_cnt_" + str(filetag).zfill(4),
-    "outflow/INS_Channel_Flow_hdf5_plt_cnt_" + str(filetag).zfill(4),
+    "outflow/buffer01/INS_Channel_Flow_hdf5_plt_cnt_" + str(filetag).zfill(4),
 ]
 
 # Create a `boxkit` dataset from the list of filenames

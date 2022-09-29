@@ -8,6 +8,6 @@ cd $SLURM_SUBMIT_DIR
 module load openmpi-4.1.1
 
 rm -f sim.par
-cat ../flash.par > sim.par
+cat ../../flash.par flash.par > sim.par
 
-mpirun maple container run "/home/run/flashx_neumann -par_file sim.par"
+mpirun maple container run "/home/run/flashx_outflow -par_file sim.par"
