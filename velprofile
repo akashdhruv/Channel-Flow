@@ -8,12 +8,24 @@ import matplotlib.pyplot as pyplot
 # `boxkit` library
 import boxkit.api as boxkit
 
-# Define inputs filetag
+# Define inputs
+#
+# `basename` - base name of the output files
+#
+# `simdir_list` - list of simulation directories
+#
+# `sim_legend` - simulation legend
+#
 # `filetag` - prefix of the HDF5 dataset file
 #
 # `xloc` - location along x-axis where we want
 #          the data to be sliced. See flash.par
-filetag = 200
+basename = "INS_Channel_Flow_hdf5_plt_cnt_"
+
+simdir_list = ["neumann/", "outflow/buffer01/", "outflow/buffer10/"]
+sim_legend = [r"Reference", r"Buffer $0.1$", r"Buffer $1.0$"]
+
+filetag = 400
 xloc = 7.0
 
 # eps (epsilon) will be added to `xloc` when creating
@@ -23,10 +35,7 @@ eps = 1e-12
 
 # Create filenames with proper path. Since we want to compare
 # two different boundary condition implementations
-filenames = [
-    "neumann/INS_Channel_Flow_hdf5_plt_cnt_" + str(filetag).zfill(4),
-    "outflow/buffer01/INS_Channel_Flow_hdf5_plt_cnt_" + str(filetag).zfill(4),
-]
+filenames = [simdir + basename + str(filetag).zfill(4) for simdir in simdir_list]
 
 # Create a `boxkit` dataset from the list of filenames
 # use `flash` as the source
@@ -114,7 +123,7 @@ ax.set_yticks([-0.5, 0.0, 0.5])
 ax.set_xlabel(r"$U(y)/u_m$")
 ax.set_ylabel(r"$y/l_0$")
 ax.set_title(r"$x/l_0={0}$".format(xloc))
-ax.legend(["Without Forcing", "With Forcing", "Exact"])
+ax.legend(sim_legend + [r"Exact"])
 
 # Save figure
 pyplot.tight_layout()
