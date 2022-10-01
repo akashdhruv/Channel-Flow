@@ -1,3 +1,0 @@
-#SBATCH --ntasks=5
-#SBATCH -t 0-30:00
-

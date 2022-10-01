@@ -1,0 +1,16 @@
+# Configuration file for `jobrunner`
+
+# A list of commands that need to be executed
+# in a squence inside a batch script
+config.commands = [
+    "module load openmpi-4.1.1",
+    'mpirun maple container run "/home/run/flashx_neumann"',
+]
+
+# Schedular configuration resources requirement
+# job name etc
+config.schedular = [
+    "#SBATCH --ntasks=5",
+    "#SBATCH -t 0-30:00",
+    "#SBATCH --job-name=neumann",
+]

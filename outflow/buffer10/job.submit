@@ -1,2 +1,0 @@
-#SBATCH --job-name=outbuf10
-
