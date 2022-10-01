@@ -5,7 +5,7 @@ import subprocess
 
 import click
 
-os.environ["JOB_BASE_DIR"] = "/home/akash/jobs/channel-flow"
+job_basedir = "/home/akash/jobs/channel-flow"
 job_schedular = "sbatch"
 
 
@@ -16,7 +16,7 @@ def submit(workdir):
     Command to submit a job from a working directy
     """
     # Get base directory
-    basedir = os.getenv("JOB_BASE_DIR")
+    basedir = job_basedir
 
     # Get current directory
     os.chdir(workdir)

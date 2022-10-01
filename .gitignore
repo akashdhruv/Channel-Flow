@@ -3,8 +3,6 @@ INS*
 slurm*
 amr_*
 *.png
-Maplefile
-!*/Maplefile
 flash.par
 submit.sh
 unitTest*
