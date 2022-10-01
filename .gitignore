@@ -4,6 +4,6 @@ slurm*
 amr_*
 *.png
 flash.par
-submit.sh
+job.sh
 unitTest*
 core*

@@ -24,8 +24,8 @@ def submit(workdir):
     Command to submit a job from a working directory
     """
     # Read TOML file and replace
-    job = toml.load("job.info")
-    job["name"] = workdir.split("/")[-1] + ".sh"
+    job = toml.load("job.toml")
+    jobscript = "job.sh"
 
     # Get current directory
     os.chdir(workdir)
@@ -34,41 +34,43 @@ def submit(workdir):
     # Build inputfile
     print(f'Creating input file: {workdir + "/" + job["inputfile"]}')
 
-    return_code = _create_inputfile(job, workdir)
+    return_code = _createInputFile(job, workdir)
     if return_code != 0:
         raise ValueError()
 
     # Build jobfile
-    print(f'Creating job file: {workdir + "/" + "job.sh"}')
+    print(f'Creating job file: {workdir + "/" + jobscript}')
 
-    return_code = _create_jobfile(job, workdir)
+    return_code = _createJobFile(job, jobscript, workdir)
     if return_code != 0:
         raise ValueError()
 
     # Submit job
     print("Submitting job")
 
-    subprocess.run(f'{job["schedular"]} {job["name"]}', shell=True, check=True)
+    subprocess.run(f'{job["schedular"]} {jobscript}', shell=True, check=True)
 
 
 @jobrunner.command(name="clean")
-@click.argument("workdir", default=None, type=str)
+@click.argument("workdir", default=None, type=str, nargs=-1)
 def clean(workdir):
     """
     Command to clean artifacts from working directory
     """
-    job = toml.load("job.info")
-    job["name"] = workdir.split("/")[-1] + ".sh"
+    job = toml.load("job.toml")
+    jobscript = "job.sh"
 
     # run cleanup
-    process = subprocess.run(
-        f'rm -vf {workdir + "/" + job["inputfile"]} {workdir + "/" + job["name"]}',
-        shell=True,
-        check=True,
-    )
+    for dir_ in workdir:
+        job["name"] = dir_.split("/")[-1] + ".sh"
+        process = subprocess.run(
+            f'rm -vf {dir_ + "/" + job["inputfile"]} {dir_ + "/" + jobscript}',
+            shell=True,
+            check=True,
+        )
 
 
-def _create_inputfile(job, workdir):
+def _createInputFile(job, workdir):
     """
     create an input file for a given simulation recursively using
     `job.input` between `basedir` and `workdir`
@@ -77,7 +79,7 @@ def _create_inputfile(job, workdir):
     `workdir` :  Current job directory
     """
     # get inputfile_list from internal method
-    inputfile_list = _get_file_list(job["basedir"], workdir, "job.input")
+    inputfile_list = _getFileList(job["basedir"], workdir, "job.input")
 
     # run a subprocess to build flash.par
     process = subprocess.run(
@@ -89,25 +91,26 @@ def _create_inputfile(job, workdir):
     return process.returncode
 
 
-def _create_jobfile(job, workdir):
+def _createJobFile(job, jobscript, workdir):
     """
     create `jobrunner.sh` for a given simulation recursively using
     `inputfile` between `basedir` and `workdir`
 
-    `job`     :  Job dictionary
-    `workdir` :  Current job directory
+    `job`       :  Job dictionary
+    `jobscript` : Job script file
+    `workdir`   :  Current job directory
     """
     # get config_list and submit_list from internal method
-    config_list = _get_file_list(job["basedir"], workdir, "job.config")
-    submit_list = _get_file_list(job["basedir"], workdir, "job.submit")
+    config_list = _getFileList(job["basedir"], workdir, "job.config")
+    submit_list = _getFileList(job["basedir"], workdir, "job.submit")
 
     # set header for the submit script
-    with open(workdir + "/" + job["name"], "w") as jobfile:
+    with open(workdir + "/" + jobscript, "w") as jobfile:
         jobfile.write("#!/bin/bash\n\n")
 
     # run the subprocess
     process = subprocess.run(
-        f'cat {" ".join(submit_list)} {" ".join(config_list)} >> {job["name"]}',
+        f'cat {" ".join(submit_list)} {" ".join(config_list)} >> {jobscript}',
         shell=True,
         check=True,
     )
@@ -115,7 +118,7 @@ def _create_jobfile(job, workdir):
     return process.returncode
 
 
-def _get_file_list(basedir, workdir, filename):
+def _getFileList(basedir, workdir, filename):
     """
     Get a list of paths containing a file with name
     `filename` between `basedir` and `workdir`
