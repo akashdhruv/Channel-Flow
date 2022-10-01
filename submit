@@ -1,0 +1,125 @@
+#!/usr/bin/env python3
+
+import os
+import subprocess
+
+import click
+
+os.environ["JOB_BASE_DIR"] = "/home/akash/jobs/channel-flow"
+job_schedular = "sbatch"
+
+
+@click.command(name="submit")
+@click.argument("workdir", default=None, type=str)
+def submit(workdir):
+    """
+    Command to submit a job from a working directy
+    """
+    # Get base directory
+    basedir = os.getenv("JOB_BASE_DIR")
+
+    # Get current directory
+    os.chdir(workdir)
+    workdir = os.getcwd()
+
+    # Build parfile
+    return_code = create_parfile(basedir, workdir)
+    if return_code != 0:
+        raise ValueError()
+
+    # Build jobfile
+    return_code = create_jobfile(basedir, workdir)
+    if return_code != 0:
+        raise ValueError()
+
+    # Submit job
+    subprocess.run(f"{job_schedular} submit.sh", shell=True, check=True)
+
+
+def create_parfile(basedir, workdir):
+    """
+    create `flash.par` for a given simulation recursively using
+    `parfile` between `basedir` and `workdir`
+
+    `basedir` :  Base directory (top level) of a project
+    `workdir` :  Current job directory
+    """
+    # get parfile_list from internal method
+    parfile_list = _get_file_list(basedir, workdir, "parfile")
+
+    # run a subprocess to build flash.par
+    process = subprocess.run(
+        f'rm -f flash.par && cat {" ".join(parfile_list)} > flash.par',
+        shell=True,
+        check=True,
+    )
+
+    return process.returncode
+
+
+def create_jobfile(basedir, workdir):
+    """
+    create `submit.sh` for a given simulation recursively using
+    `parfile` between `basedir` and `workdir`
+
+    `basedir` :  Base directory (top level) of a project
+    `workdir` :  Current job directory
+    """
+    # get jobfile_list from internal method
+    jobfile_list = _get_file_list(basedir, workdir, "jobfile")
+
+    with open(workdir + "/" + "submit.sh", "w") as submit_file:
+        submit_file.write("#!/bin/bash\n\n")
+
+    process = subprocess.run(
+        f'cat submit {" ".join(jobfile_list)} >> submit.sh', shell=True, check=True
+    )
+
+    return process.returncode
+
+
+def _get_file_list(basedir, workdir, filename):
+    """
+    Get a list of paths containing a file with name
+    `filename` between `basedir` and `workdir`
+
+    Arguments
+    ---------
+    `basedir`  :  Base directory (top level) of a project
+    `workdir`  :  Current job directory
+    `filename` :  Name of the file to query
+
+    Returns
+    --------
+    file_list :   A list of path containing the file
+    """
+
+    # Get a list of directory levels between `basedir` and `workdir`
+    dir_levels = [
+        level for level in workdir.split("/") if level not in basedir.split("/")
+    ]
+
+    # Create an empty file list
+    file_list = []
+
+    # start with current level
+    current_level = basedir
+
+    # Loop over directory levels
+    for level in [""] + dir_levels:
+
+        # Set current level
+        current_level = current_level + "/" + level
+
+        # set file path
+        file_path = current_level + "/" + filename
+
+        # Append to file list if path exists
+        if os.path.exists(file_path):
+            file_list.append(file_path)
+
+    return file_list
+
+
+if __name__ == "__main__":
+    submit()

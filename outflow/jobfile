@@ -1,0 +1,2 @@
+# add command for current level
+mpirun maple container run "/home/run/flashx_outflow"

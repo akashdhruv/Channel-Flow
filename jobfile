@@ -1,0 +1,3 @@
+# load mpi module  
+module load openmpi-4.1.1
+

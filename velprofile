@@ -22,8 +22,8 @@ import boxkit.api as boxkit
 #          the data to be sliced. See flash.par
 basename = "INS_Channel_Flow_hdf5_plt_cnt_"
 
-simdir_list = ["neumann/", "outflow/buffer01/", "outflow/buffer10/"]
-sim_legend = [r"Reference", r"Buffer $0.1$", r"Buffer $1.0$"]
+simdir_list = ["neumann/", "outflow/buffer01/", "outflow/buffer20/"]
+sim_legend = [r"Reference", r"Buffer $0.1$", r"Buffer $2.0$"]
 
 filetag = 400
 xloc = 7.0
@@ -127,4 +127,4 @@ ax.legend(sim_legend + [r"Exact"])
 
 # Save figure
 pyplot.tight_layout()
-pyplot.savefig("velprofile.png", dpi=300)
+pyplot.savefig("vel_profile.png", dpi=300)
