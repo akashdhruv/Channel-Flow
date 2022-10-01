@@ -1,0 +1,4 @@
+# TOML configuration for jobs
+basedir = "/home/akash/jobs/channel-flow"
+schedular = "sbatch"
+inputfile = "flash.par"
