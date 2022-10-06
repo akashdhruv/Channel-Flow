@@ -9,3 +9,9 @@ job.schedular = "sbatch"
 # a single applicaltion or futher down the
 # directory tree if working with multiple
 job.input = "flash.par"
+
+# configuration variable
+config.run = ["load_modules.sh"]
+
+# configuration setup scripts
+config.setup = ["link_maplefile.sh"]

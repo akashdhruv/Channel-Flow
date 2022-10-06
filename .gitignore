@@ -3,7 +3,9 @@ INS*
 slurm*
 amr_*
 *.png
+Maplefile
 flash.par
-job.sh
+run.job
+setup.job
 unitTest*
 core*
