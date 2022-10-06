@@ -5,7 +5,7 @@ amr_*
 *.png
 Maplefile
 flash.par
-run.job
-setup.job
+job_submit.sh
+job_setup.sh
 unitTest*
 core*

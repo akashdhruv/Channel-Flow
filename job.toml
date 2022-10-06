@@ -11,7 +11,7 @@ job.schedular = "sbatch"
 job.input = "flash.par"
 
 # configuration variable
-config.run = ["load_modules.sh"]
+config.submit = ["load_modules.sh"]
 
 # configuration setup scripts
-config.setup = ["link_maplefile.sh"]
+config.setup = ["link_maplefiles.sh"]
