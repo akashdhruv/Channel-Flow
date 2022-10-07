@@ -2,16 +2,16 @@
 
 # schedular submit command,
 # a simple `sbatch` or `bsub` or `qsub`
-job.schedular = "sbatch"
+schedular.command = "sbatch"
 
 # input file name. This is application specific
 # can be defined at top level if working with
 # a single applicaltion or futher down the
 # directory tree if working with multiple
-job.input = "flash.par"
+config.input = "flash.par"
 
 # configuration variable
-config.submit = ["load_modules.sh"]
+config.submit = ["modules.sh"]
 
 # configuration setup scripts
-config.setup = ["link_maplefiles.sh"]
+config.setup = ["maple.sh"]

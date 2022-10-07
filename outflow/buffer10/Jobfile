@@ -1,0 +1,3 @@
+# Configuration file for `jobrunner`
+
+schedular.options = ["#SBATCH --job-name=outbuf10"]

@@ -1,8 +1,11 @@
 # Configuration file for `jobrunner`
 
+# target script
+config.target = "neumann.sh"
+
 # Schedular configuration resources requirement
 # job name etc
-config.schedular = [
+schedular.options = [
     "#SBATCH --ntasks=5",
     "#SBATCH -t 0-30:00",
     "#SBATCH --job-name=neumann",

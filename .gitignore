@@ -4,8 +4,8 @@ slurm*
 amr_*
 *.png
 Maplefile
-flash.par
-job_submit.sh
-job_setup.sh
+job.input
+job.submit
+job.setup
 unitTest*
 core*
