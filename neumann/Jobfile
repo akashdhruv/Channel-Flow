@@ -1,10 +1,16 @@
 # Configuration file for `jobrunner`
 
-# target script
+# list/patterns of files to
+# archive and store in the
+# directory tree
+config.archive = ["INS*"]
+
+# target script for
+# runnning simulations
 config.target = "neumann.sh"
 
-# Schedular configuration resources requirement
-# job name etc
+# Schedular configuration
+# resource requirement, job name, etc
 schedular.options = [
     "#SBATCH --ntasks=5",
     "#SBATCH -t 0-30:00",

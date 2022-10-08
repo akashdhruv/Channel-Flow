@@ -1,6 +1,7 @@
 # Configuration file for `jobrunner`
 
-# target script
+# target script for
+# runnning simulations
 config.target = "outflow.sh"
 
 # Schedular configuration resources requirement

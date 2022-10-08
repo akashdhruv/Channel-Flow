@@ -81,4 +81,3 @@ gr_hyprePcType = "HYPRE_AMG"
 gr_hypreSolverType = "HYPRE_BICGSTAB"
 gr_hypreRelTol = 1.0e-12
 gr_hypreFloor  = 1.0e-16
-
