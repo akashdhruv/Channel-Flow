@@ -3,7 +3,7 @@
 # list/patterns of files to
 # archive and store in the
 # directory tree
-config.archive = ["INS*"]
+job.archive = ["INS*"]
 
 # schedular options
-schedular.options = ["#SBATCH --job-name=outbuf10"]
+schedular.options = ["#SBATCH --job-name=outbuf01"]

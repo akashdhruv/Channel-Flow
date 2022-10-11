@@ -3,11 +3,11 @@
 # list/patterns of files to
 # archive and store in the
 # directory tree
-config.archive = ["INS*"]
+job.archive = ["INS*"]
 
 # target script for
 # runnning simulations
-config.target = "neumann.sh"
+job.target = "neumann.sh"
 
 # Schedular configuration
 # resource requirement, job name, etc

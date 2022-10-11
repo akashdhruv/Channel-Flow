@@ -2,7 +2,7 @@
 
 # target script for
 # runnning simulations
-config.target = "outflow.sh"
+job.target = "outflow.sh"
 
 # Schedular configuration resources requirement
 # job name etc
