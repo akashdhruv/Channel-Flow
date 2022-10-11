@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 # Standard libraries
 import os
 import itertools
@@ -137,4 +135,4 @@ ax.legend(sim_legend + [r"Exact"])
 
 # Save figure
 pyplot.tight_layout()
-pyplot.savefig("vel_profile.png", dpi=300)
+pyplot.savefig("velProfile.png", dpi=300)
