@@ -1,5 +1,5 @@
 # cache the value of current node directory
-NodeDir=$PWD
+NodeDir=$(realpath .)
 
 # configure Maplefile
 if [ $JobWorkDir != $NodeDir ]; then
