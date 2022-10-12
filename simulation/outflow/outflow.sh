@@ -4,7 +4,7 @@ NodeDir=$(realpath .)
 # configure Maplefile
 if [ $JobWorkDir != $NodeDir ]; then
 	# configure Maplefile
-	cd $JobWorkDir && maple config $NodeDir/Maplefile
+	cd $JobWorkDir && maple config job.target
 fi
 
 # run job

@@ -1,3 +1,5 @@
 # Configuration file for `jobrunner`
 
+job.input = ["flash.par"]
+
 schedular.options = ["#SBATCH --job-name=outbuf15"]

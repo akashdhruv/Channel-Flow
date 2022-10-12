@@ -5,9 +5,11 @@
 # directory tree
 job.archive = ["INS*"]
 
-# target script for
+# target file for
 # runnning simulations
-job.target = "neumann.sh"
+job.target = "Maplefile"
+
+job.submit = ["neumann.sh"]
 
 # Schedular configuration
 # resource requirement, job name, etc
