@@ -4,6 +4,8 @@ slurm*
 amr_*
 *.png
 Maplefile
+!simulation/Maplefile
+!analysis/Maplefile
 job.input
 job.submit
 job.setup

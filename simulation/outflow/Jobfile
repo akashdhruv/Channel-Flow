@@ -1,9 +1,6 @@
 # Configuration file for `jobrunner`
 
-# target file for
-# runnning simulations
-job.target = "Maplefile"
-
+# submit scripts
 job.submit = ["outflow.sh"]
 
 # Schedular configuration resources requirement

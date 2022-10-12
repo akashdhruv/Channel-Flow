@@ -9,3 +9,6 @@ schedular.command = "sbatch"
 # a single applicaltion or futher down the
 # directory tree if working with multiple
 job.input = ["flash.par"]
+
+# target file
+job.target = "Maplefile"

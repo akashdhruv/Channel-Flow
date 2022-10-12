@@ -5,10 +5,7 @@
 # directory tree
 job.archive = ["INS*"]
 
-# target file for
-# runnning simulations
-job.target = "Maplefile"
-
+# list of submit scripts
 job.submit = ["neumann.sh"]
 
 # Schedular configuration

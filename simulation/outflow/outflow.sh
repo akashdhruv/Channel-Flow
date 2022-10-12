@@ -1,11 +1,8 @@
-# cache the value of current node directory
-NodeDir=$(realpath .)
+# chdir into working directory
+cd $JobWorkDir
 
-# configure Maplefile
-if [ $JobWorkDir != $NodeDir ]; then
-	# configure Maplefile
-	cd $JobWorkDir && maple config job.target
-fi
+# configure maple
+maple config job.target
 
-# run job
-cd $JobWorkDir && mpirun maple container run "/home/run/flashx_outflow -par_file job.input"
+# run simulations
+mpirun maple container run "/home/run/flashx_outflow -par_file job.input"
