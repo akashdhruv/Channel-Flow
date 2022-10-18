@@ -3,6 +3,7 @@ import os
 import itertools
 import numpy
 import matplotlib.pyplot as pyplot
+import plotille
 
 # `boxkit` library
 import boxkit.api as boxkit
@@ -24,16 +25,16 @@ basename = "INS_Channel_Flow_hdf5_plt_cnt_"
 simdir_list = [
     os.getenv("PROJECT_HOME") + os.sep + "simulation/neumann/",
     os.getenv("PROJECT_HOME") + os.sep + "simulation/outflow/buffer01/",
-    os.getenv("PROJECT_HOME") + os.sep + "simulation/outflow/buffer10/",
+    #os.getenv("PROJECT_HOME") + os.sep + "simulation/outflow/buffer10/",
 ]
 
 sim_legend = [
     r"Reference",
     r"Buffer $1.0$",
-    r"Buffer $1.5$",
+    #r"Buffer $1.5$",
 ]
 
-filetag = 3
+filetag = 120
 xloc = 7.0
 
 # eps (epsilon) will be added to `xloc` when creating
@@ -93,6 +94,29 @@ for slice_ in slice_list:
 profile_exact = 1 - (2.0 * profile_loc) ** 2
 profile_loc_list.append(profile_loc)
 profile_val_list.append(profile_exact)
+sim_legend = sim_legend + [r"Exact"]
+
+# Create a terminal plot using plotille
+figure = plotille.Figure()
+figure.width = 50
+figure.height = 20
+figure.set_x_limits(min_=0, max_=1.5)
+figure.set_y_limits(min_=-0.5, max_=0.5)
+figure.color_mode = "byte"
+
+# set line colors
+linecolors = itertools.cycle((25, 100, 200, 250))
+
+# Loop over result list and extract
+# invidual values from slices
+for profile_val, profile_loc, legend in zip(
+    profile_val_list, profile_loc_list, sim_legend
+):
+    figure.plot(profile_val, profile_loc, lc=next(linecolors), label=legend)
+
+# show terminal figure
+print(figure.show(legend=True))
+
 
 # Create a figure object and set styling
 # font/text options. Request latex
@@ -108,8 +132,8 @@ linestyle = itertools.cycle(("-", "--", "-."))
 # create a subfigure object
 ax = figure.add_subplot()
 
-# Loop over result list and extra invidual values
-# from slices
+# Loop over result list and extract
+# invidual values from slices
 for profile_val, profile_loc in zip(profile_val_list, profile_loc_list):
 
     # Do the actual plot cycle through marker and linestyles
@@ -131,7 +155,7 @@ ax.set_yticks([-0.5, 0.0, 0.5])
 ax.set_xlabel(r"$U(y)/u_m$")
 ax.set_ylabel(r"$y/l_0$")
 ax.set_title(r"$x/l_0={0}$".format(xloc))
-ax.legend(sim_legend + [r"Exact"])
+ax.legend(sim_legend)
 
 # Save figure
 pyplot.tight_layout()
