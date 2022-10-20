@@ -1,9 +1,9 @@
-## Template repository to demonstrate use of `Maple` and `Jobrunner`
+# Channel Flow Simulation 
 
-### Maple: [akashdhruv/Maple](https://github.com/akashdhruv/Maple)
-### Jobrunner: [akashdhruv/Jobrunner](https://github.com/akashdhruv/Jobrunner) 
+This repository contains a lab notebook to test/demonstrate effects of a modified pressure outflow boundary condition on a simple channel flow simulation.
 
-- `Maplefile.simulation` - configuration file for deploying a simulation workload using singularity]
-- `Maplefile.analysis` - configuration file for post processing and analysis
-- `job.toml` - configuration file for Jobrunner
-- `job.input` - input parameter file
+## Dependencies
+
+## Organization
+
+## Usage
