@@ -1,4 +1,4 @@
-<p align="center"> <img src="./icon.png" width="800" style="border:none;background:none;"/> </p>
+<p align="center"> <img src="./icon.png" width="700" style="border:none;background:none;"/> </p>
 
 # <p align="center"> Channel Flow Simulations </p>
 
