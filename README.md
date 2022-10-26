@@ -81,3 +81,17 @@ flashkit create xdmf -b <begin_number> -e <end_number>
 
 The `<begin_number>` and `<end_number>` refer to the files containing the pattern `*_hdf5_plt_cnt_*`. The resulting `*.xmf` file is ParaView compatible.
 
+## Citation
+
+```
+@software{akash_dhruv_2022_7255643,
+  author       = {Akash Dhruv},
+  title        = {akashdhruv/Channel-Flow: October 2022},
+  month        = oct,
+  year         = 2022,
+  publisher    = {Zenodo},
+  version      = {22.10},
+  doi          = {10.5281/zenodo.7255643},
+  url          = {https://doi.org/10.5281/zenodo.7255643}
+}
+```
