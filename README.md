@@ -6,6 +6,9 @@ This repository contains a lab notebook to test/demonstrate effects of a modifie
 
 ## Dependencies
 
+Maple: https://github.com/akashdhruv/Maple
+Jobrunner: https://github.com/akashdhruv/Jobrunner
+
 ## Organization
 
 ```
