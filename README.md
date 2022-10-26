@@ -55,7 +55,13 @@ $ tree Channel-Flow
 
 ## Usage
 
-Once a user has installed necessary libaries/tools, i.e., Jobrunner, Maple, MPI, and ParaView, and designed their customized `environment.sh`, they can submit a simulation by running the following command from the project root directory,
+Once a user has installed necessary libaries/tools, i.e., Jobrunner, Maple, MPI, and ParaView, and designed their customized `environment.sh`, they can setup simulation by running the following command from the project root directory,
+
+```
+jobrunner setup simulation
+```
+
+This command will build a `channel_flow.sif` singularity image which can be run by executing,
 
 ```
 jobrunner submit simulation/neumann
