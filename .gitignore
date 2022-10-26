@@ -8,9 +8,6 @@ amr_*
 Maplefile
 !simulation/Maplefile
 !analysis/Maplefile
-job.input
-job.submit
-job.setup
 job.target
 unitTest*
 core*

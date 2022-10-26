@@ -1,0 +1,1892 @@
+ FLASH log file:  10-26-2022  18:18:37.794    Run number:  1
+ ==============================================================================
+ Number of MPI tasks:                  5
+ MPI version:                          3
+ MPI subversion:                       1
+ Dimensionality:                       2
+ Max Number of Blocks/Proc:          500
+ Number x zones:                      16
+ Number y zones:                      16
+ Number z zones:                       1
+ Setup stamp:     Wed Sep 28 19:01:28 2022
+ Build stamp:     Wed Sep 28 19:01:36 2022
+ System info:     Linux aba6a0e7f290 5.15.0-46-generic #49~20.04.1-Ubuntu SMP Thu Aug 4 19:15:44 U
+ Version:         Flash-X 1.0 ()                                                                  
+ Build directory: /home/mount/FlashX/object
+ Setup syntax:    /home/mount/FlashX/bin/setup.py incompFlow/ChannelFlow -auto -2d -nxb=16 -nyb=16 -site=container +amrex -maxblocks=500 +parallelIO +nolwf IOWriteGridFiles=True SimForceInOut=True
+ f compiler flags: h5pfc -I/home/lib/amrex/2D/include -DH5_USE_18_API -c -O2 -fdefault-real-8 -fdefault-double-8 -Wuninitialized -DHAVE_MPI_MODULE -DINDEXREORDER -DMAXBLOCKS=500 -DNXB=16 -DNYB=16 -DNZB=1 -DN_DIM=2
+ c compiler flags:    h5pcc -I/home/lib/amrex/2D/include -DH5_USE_18_API -c -O2 -Wuninitialized -D_FORTIFY_SOURCE=2 -DINDEXREORDER -DMAXBLOCKS=500 -DNXB=16 -DNYB=16 -DNZB=1 -DN_DIM=2
+ ==============================================================================
+ Comment:  2D Channel Flow problem
+ ==============================================================================
+ FLASH Units used:
+   Driver/DriverMain/Unsplit
+   Grid/GridBoundaryConditions
+   Grid/GridMain/AMR/Amrex
+   Grid/GridSolvers/AmrexMultigridSolver
+   Grid/localAPI
+   IO/IOMain/hdf5/AM
+   IO/IOMain/hdf5/parallel/AM
+   IO/IOMain/hdf5/writeGrid/AM
+   IO/localAPI
+   PhysicalConstants/PhysicalConstantsMain
+   RuntimeParameters/RuntimeParametersMain
+   Simulation/SimulationForcing/incompFlow/Inlet
+   Simulation/SimulationForcing/incompFlow/Outlet
+   Simulation/SimulationMain/incompFlow/ChannelFlow
+   flashUtilities/contiguousConversion
+   flashUtilities/general
+   flashUtilities/interpolation/oneDim
+   flashUtilities/nameValueLL
+   flashUtilities/system/memoryUsage/legacy
+   monitors/Logfile/LogfileMain
+   monitors/Timers/TimersMain/MPINative
+   numericalTools/Stencils/StencilsAdvection
+   numericalTools/Stencils/StencilsDiffusion
+   numericalTools/Stencils/StencilsMain
+   numericalTools/Stencils/StencilsTemporal
+   physics/IncompNS/IncompNSExtras
+   physics/IncompNS/IncompNSMain/constDens
+   physics/IncompNS/localAPI
+ ==============================================================================
+ RuntimeParameters:
+                                                                               
+ ==============================================================================
+bndpriorityone              =          1
+bndprioritythree            =          3
+bndprioritytwo              =          2
+checkpointfileintervalstep  =         50 [CHANGED]
+checkpointfilenumber        =          0
+dr_abortpause               =          2
+dr_dtminbelowaction         =          1
+drift_break_inst            =          0
+drift_trunc_mantissa        =          2
+drift_verbose_inst          =          0
+fileformatversion           =          9
+forcedplotfilenumber        =          0
+gr_amrexmg_cg_verbose       =          0
+gr_amrexmg_linop_maxorder   =          2
+gr_amrexmg_max_fmg_iter     =          0
+gr_amrexmg_max_grid_size    =         16
+gr_amrexmg_max_iter         =        200 [CHANGED]
+gr_amrexmg_max_level        =          1
+gr_amrexmg_n_cell           =         32
+gr_amrexmg_prob_type        =          1
+gr_amrexmg_ref_ratio        =          2
+gr_amrexmg_verbose          =          2
+gr_amrex_verbosity          =          1
+gr_lrefmaxtimevalue_1       =         -1
+gr_lrefmaxtimevalue_10      =         -1
+gr_lrefmaxtimevalue_11      =         -1
+gr_lrefmaxtimevalue_12      =         -1
+gr_lrefmaxtimevalue_13      =         -1
+gr_lrefmaxtimevalue_14      =         -1
+gr_lrefmaxtimevalue_15      =         -1
+gr_lrefmaxtimevalue_16      =         -1
+gr_lrefmaxtimevalue_17      =         -1
+gr_lrefmaxtimevalue_18      =         -1
+gr_lrefmaxtimevalue_19      =         -1
+gr_lrefmaxtimevalue_2       =         -1
+gr_lrefmaxtimevalue_20      =         -1
+gr_lrefmaxtimevalue_3       =         -1
+gr_lrefmaxtimevalue_4       =         -1
+gr_lrefmaxtimevalue_5       =         -1
+gr_lrefmaxtimevalue_6       =         -1
+gr_lrefmaxtimevalue_7       =         -1
+gr_lrefmaxtimevalue_8       =         -1
+gr_lrefmaxtimevalue_9       =         -1
+gr_restrictallmethod        =          3
+gr_sanitizedatamode         =          4
+gr_tilesizex                =         16
+gr_tilesizey                =         16
+gr_tilesizez                =          1
+iprocs                      =          1
+ins_cflflg                  =          0 [CHANGED]
+ins_isgs                    =          0
+ins_velprolongmethod        =          1
+interpol_order              =          2
+jprocs                      =          1
+kprocs                      =          1
+lrefine_del                 =          0
+lrefine_max                 =          2 [CHANGED]
+lrefine_min                 =          2 [CHANGED]
+max_particles_per_blk       =        100
+memory_stat_freq            =     100000
+meshcopycount               =          1
+min_particles_per_blk       =          1
+nbegin                      =          1
+nblockx                     =         40 [CHANGED]
+nblocky                     =          4 [CHANGED]
+nblockz                     =          4 [CHANGED]
+nend                        =      20000 [CHANGED]
+nrefs                       =       1000 [CHANGED]
+nsteptotalsts               =          5
+outputsplitnum              =          1
+plotfileintervalstep        =         50 [CHANGED]
+plotfilenumber              =          0
+refine_var_count            =          4
+rolling_checkpoint          =      10000
+sweeporder                  =        123
+wr_integrals_freq           =          1
+checkpointfileintervaltime  =                 0.100E+01
+checkpointfileintervalz     =                 0.180+309
+derefine_cutoff_1           =                 0.200E+00
+derefine_cutoff_2           =                 0.200E+00
+derefine_cutoff_3           =                 0.200E+00
+derefine_cutoff_4           =                 0.200E+00
+dr_dtmincontinue            =                 0.000E+00
+dr_tstepslowstartfactor     =                 0.100E+00
+dtinit                      =                 0.100E-02 [CHANGED]
+dtmax                       =                 0.100E+06
+dtmin                       =                 0.100E-09
+gr_amrexmg_tol              =                 0.100E-12 [CHANGED]
+gr_btworkchildscaling       =                 0.100E+01
+gr_btworkdefaultleaf        =                 0.200E+01
+gr_btworkdefaultpar         =                 0.100E+01
+gr_btworklbleaf             =                 0.000E+00
+gr_btworklbpar              =                 0.000E+00
+gr_btworkubleaf             =                 0.100E+07
+gr_btworkubpar              =                 0.100E+07
+gr_lrefinemaxredlogbase     =                 0.100E+02
+gr_lrefinemaxredradiusfact  =                 0.000E+00
+gr_lrefinemaxredtref        =                 0.000E+00
+gr_lrefinemaxredtimescale   =                 0.100E+01
+gr_lrefmaxtime_1            =                -0.100E+01
+gr_lrefmaxtime_10           =                -0.100E+01
+gr_lrefmaxtime_11           =                -0.100E+01
+gr_lrefmaxtime_12           =                -0.100E+01
+gr_lrefmaxtime_13           =                -0.100E+01
+gr_lrefmaxtime_14           =                -0.100E+01
+gr_lrefmaxtime_15           =                -0.100E+01
+gr_lrefmaxtime_16           =                -0.100E+01
+gr_lrefmaxtime_17           =                -0.100E+01
+gr_lrefmaxtime_18           =                -0.100E+01
+gr_lrefmaxtime_19           =                -0.100E+01
+gr_lrefmaxtime_2            =                -0.100E+01
+gr_lrefmaxtime_20           =                -0.100E+01
+gr_lrefmaxtime_3            =                -0.100E+01
+gr_lrefmaxtime_4            =                -0.100E+01
+gr_lrefmaxtime_5            =                -0.100E+01
+gr_lrefmaxtime_6            =                -0.100E+01
+gr_lrefmaxtime_7            =                -0.100E+01
+gr_lrefmaxtime_8            =                -0.100E+01
+gr_lrefmaxtime_9            =                -0.100E+01
+ins_cfl                     =                 0.300E+00 [CHANGED]
+ins_dpdx                    =                 0.000E+00
+ins_dpdy                    =                 0.000E+00
+ins_dpdz                    =                 0.000E+00
+ins_dtspec                  =                 0.100E-02
+ins_gravx                   =                 0.000E+00
+ins_gravy                   =                 0.000E+00
+ins_gravz                   =                 0.000E+00
+ins_invreynolds             =                 0.500E-02 [CHANGED]
+ins_sigma                   =                 0.200E+00 [CHANGED]
+nusts                       =                 0.100E+00
+plotfileintervaltime        =                 0.100E+01
+plotfileintervalz           =                 0.180+309
+refine_cutoff_1             =                 0.800E+00
+refine_cutoff_2             =                 0.800E+00
+refine_cutoff_3             =                 0.800E+00
+refine_cutoff_4             =                 0.800E+00
+refine_filter_1             =                 0.100E-01
+refine_filter_2             =                 0.100E-01
+refine_filter_3             =                 0.100E-01
+refine_filter_4             =                 0.100E-01
+rss_limit                   =                -0.100E+01
+sim_inletbuffer             =                 0.100E+01
+sim_inletgrowthrate         =                 0.400E+01
+sim_inletsink               =                -0.100E+01
+sim_outletbuffer            =                 0.100E+01
+sim_outletgrowthrate        =                 0.400E+01
+sim_outletsink              =                -0.100E+01
+small                       =                 0.100E-09
+smalle                      =                 0.100E-09
+smallp                      =                 0.100E-09
+smallt                      =                 0.100E-09
+smallu                      =                 0.100E-09
+smallx                      =                 0.100E-09
+smlrho                      =                 0.100E-09
+tinitial                    =                 0.000E+00
+tmax                        =                 0.100E+03 [CHANGED]
+tstep_change_factor         =                 0.110E+01 [CHANGED]
+wall_clock_checkpoint       =                 0.432E+05
+wall_clock_time_limit       =                 0.605E+06
+x_refine_center             =                 0.000E+00
+xmax                        =                 0.100E+02 [CHANGED]
+xmin                        =                 0.000E+00
+y_refine_center             =                 0.000E+00
+ymax                        =                 0.500E+00 [CHANGED]
+ymin                        =                -0.500E+00 [CHANGED]
+zfinal                      =                 0.000E+00
+zinitial                    =                -0.100E+01
+z_refine_center             =                 0.000E+00
+zmax                        =                 0.500E+00 [CHANGED]
+zmin                        =                -0.500E+00 [CHANGED]
+amrexinterpolator           = CELL_CONSERVATIVE_LINEAR      
+basenm                      = INS_Channel_Flow_              [CHANGED]
+eosmode                     = dens_ie                       
+eosmodeinit                 = dens_ie                       
+geometry                    = cartesian                     
+grav_boundary_type          = isolated                      
+log_file                    = INS_Channel_Flow.log           [CHANGED]
+output_directory            =                               
+pc_unitsbase                = CGS                           
+plot_grid_var_1             = none                          
+plot_grid_var_10            = none                          
+plot_grid_var_11            = none                          
+plot_grid_var_12            = none                          
+plot_grid_var_2             = none                          
+plot_grid_var_3             = none                          
+plot_grid_var_4             = none                          
+plot_grid_var_5             = none                          
+plot_grid_var_6             = none                          
+plot_grid_var_7             = none                          
+plot_grid_var_8             = none                          
+plot_grid_var_9             = none                          
+plot_var_1                  = pres                           [CHANGED]
+plot_var_10                 = none                          
+plot_var_11                 = none                          
+plot_var_12                 = none                          
+plot_var_2                  = velx                           [CHANGED]
+plot_var_3                  = vely                           [CHANGED]
+plot_var_4                  = dust                           [CHANGED]
+plot_var_5                  = none                          
+plot_var_6                  = none                          
+plot_var_7                  = none                          
+plot_var_8                  = none                          
+plot_var_9                  = none                          
+prof_file                   = profile.dat                   
+refine_var_1                = none                          
+refine_var_2                = none                          
+refine_var_3                = none                          
+refine_var_4                = none                          
+run_comment                 = 2D Channel Flow problem        [CHANGED]
+run_number                  = 1                             
+stats_file                  = flash.dat                     
+xl_boundary_type            = inflow_ins                     [CHANGED]
+xr_boundary_type            = outflow_ins                    [CHANGED]
+yl_boundary_type            = noslip_ins                     [CHANGED]
+yr_boundary_type            = noslip_ins                     [CHANGED]
+zl_boundary_type            = noslip_ins                     [CHANGED]
+zr_boundary_type            = noslip_ins                     [CHANGED]
+csvsummaryallprocs          =  F
+logsummaryallprocs          =  F
+allowdtstsdominate          =  F
+alwayscomputeuservars       =  T
+alwaysrestrictcheckpoint    =  T
+chkguardcellsinput          =  F
+chkguardcellsoutput         =  F
+converttoconsvdformeshcalls =  F
+converttoconsvdinmeshinterp =  F [CHANGED]
+corners                     =  F
+dr_printtsteploc            =  T
+dr_shortenlaststepbeforetmax =  F
+drift_tuples                =  F
+eachprocwritesownabortlog   =  F
+eachprocwritessummary       =  F
+earlyblockdistadjustment    =  T
+enablemaskedgcfill          =  F
+flux_correct                =  T
+flux_correct_perlevel       =  T
+geometryoverride            =  F
+gr_amrexmg_agglomeration    =  T
+gr_amrexmg_composite_solve  =  T [CHANGED]
+gr_amrexmg_consolidation    =  T
+gr_bcenableapplymixedgds    =  F [CHANGED]
+gr_bndgcfillneedsprimitivevars =  T
+gr_btcustomwork             =  F
+gr_btexchangework           =  F
+gr_btsortbywork             =  T
+gr_enabletiling             =  F
+gr_lrefinemaxbytime         =  F
+gr_lrefinemaxreddobylogr    =  F
+gr_lrefinemaxreddobytime    =  F
+gr_usetiling                =  F
+ignoreforcedplot            =  F
+ins_pressurecorrect         =  F [CHANGED]
+io_plotfileamrexformat      =  F
+io_writemscalarintegrals    =  F
+plotfilegridquantitydp      =  F
+plotfilemetadatadp          =  F
+reducegcellfills            =  F
+refine_on_particle_count    =  F
+restart                     =  F
+summaryoutputonly           =  F
+threadblocklistbuild        =  F
+threaddelepblocklist        =  F
+threaddelepwithinblock      =  F
+threaddriverblocklist       =  F
+threaddriverwithinblock     =  F
+threadraytracebuild         =  F
+threadwithinblockbuild      =  F
+tmr_suppressinparallel      =  F
+typematchedxfer             =  T
+unbiased_geometry           =  F
+useburn                     =  F
+usecollectivehdf5           =  T
+usedeleptonize              =  F
+usegravity                  =  F
+useheatad                   =  F
+usehydro                    =  F
+useimbound                  =  F
+useincompns                 =  T
+uselegacylabels             =  T
+usemultiphase               =  F
+useparticles                =  F
+useradtrans                 =  F
+usests                      =  F
+usestsfordiffusion          =  F
+writestatsummary            =  T
+                                                                               
+ ==============================================================================
+                                                                               
+ WARNING: Ignored Parameters :
+ These parameters were found in the flash.par file, but they were
+ not declared in any Config file for the simulation!
+                                                                               
+ gr_pmRpDivergenceFree
+ gr_pmRpNfieldDivf
+ gr_pmRpConsvFluxes
+ gr_pmRpConsvFluxDensities
+ gr_hyprePrintSolveInfo
+ gr_hyprePcType
+ gr_hypreSolverType
+ gr_hypreRelTol
+ gr_hypreFloor
+                                                                               
+ ==============================================================================
+                                                                               
+ Known units of measurement:
+                                                                               
+              Unit                          CGS Value                Base Unit
+  1                  cm                     1.0000                           cm
+  2                   s                     1.0000                            s
+  3                   g                     1.0000                            g
+  4                   K                     1.0000                            K
+  5                 esu                     1.0000                          esu
+  6                 mol                     1.0000                          mol
+  7                   m                     100.00                           cm
+  8                  km                    1.00000E+05                       cm
+  9                  pc                    3.08568E+18                       cm
+ 10                 kpc                    3.08568E+21                       cm
+ 11                 Mpc                    3.08568E+24                       cm
+ 12                 Gpc                    3.08568E+27                       cm
+ 13                Rsun                    6.96000E+10                       cm
+ 14                  AU                    1.49598E+13                       cm
+ 15                  yr                    3.15569E+07                        s
+ 16                 Myr                    3.15569E+13                        s
+ 17                 Gyr                    3.15569E+16                        s
+ 18                  kg                     1000.0                            g
+ 19                Msun                    1.98892E+33                        g
+ 20                 amu                    1.66054E-24                        g
+ 21                  eV                     11605.                            K
+ 22                   C                    2.99792E+09                      esu
+ 23                LFLY                    3.08568E+24                       cm
+ 24                TFLY                    2.05759E+17                        s
+ 25                MFLY                    9.88470E+45                        g
+ 26            clLength                    3.08568E+24                       cm
+ 27              clTime                    3.15569E+16                        s
+ 28              clMass                    1.98892E+48                        g
+ 29              clTemp                    1.16045E+07                        K
+-----------End of Units--------------------
+                                                                               
+ Known physical constants:
+                                                                               
+    Constant Name       Constant Value   cm       s        g        K        esu      mol
+  1              Newton    6.67408E-08   3.0     -2.0     -1.0      0.0      0.0      0.0    
+  2      speed of light    2.99792E+10   1.0     -1.0      0.0      0.0      0.0      0.0    
+  3              Planck    6.62607E-27   2.0     -1.0      1.0      0.0      0.0      0.0    
+  4     electron charge    4.80320E-10   0.0      0.0      0.0      0.0      1.0      0.0    
+  5       electron mass    9.10938E-28   0.0      0.0      1.0      0.0      0.0      0.0    
+  6         proton mass    1.67262E-24   0.0      0.0      1.0      0.0      0.0      0.0    
+  7      fine-structure    7.29735E-03   0.0      0.0      0.0      0.0      0.0      0.0    
+  8            Avogadro    6.02214E+23   0.0      0.0      0.0      0.0      0.0     -1.0    
+  9           Boltzmann    1.38065E-16   2.0     -2.0      1.0     -1.0      0.0      0.0    
+ 10  ideal gas constant    8.31446E+07   2.0     -2.0      1.0     -1.0      0.0     -1.0    
+ 11                Wien    0.28978       1.0      0.0      0.0      1.0      0.0      0.0    
+ 12    Stefan-Boltzmann    5.67037E-05   0.0     -3.0      1.0     -4.0      0.0      0.0    
+ 13  Radiation Constant    7.56572E-15  -1.0     -2.0      1.0     -4.0      0.0      0.0    
+ 14                  pi     3.1416       0.0      0.0      0.0      0.0      0.0      0.0    
+ 15                   e     2.7183       0.0      0.0      0.0      0.0      0.0      0.0    
+ 16               Euler    0.57722       0.0      0.0      0.0      0.0      0.0      0.0    
+ ==============================================================================
+                                                                               
+ Multifluid database: not configured in
+                                                                               
+ ==============================================================================
+ [ 10-26-2022  18:18:37.796 ] [gr_initGeometry] checking BCs for idir: 1
+ [ 10-26-2022  18:18:37.796 ] [gr_initGeometry] checking BCs for idir: 2
+ [ 10-26-2022  18:18:37.796 ] [gr_amrexInit]: AMREX_GIT_VERSION=21.05
+ WARNING : Adaptive Grid did not find any variable to refine
+ [ 10-26-2022  18:18:37.808 ] [gr_initNewLevelCallback] Initialized data on level: 1
+ [ 10-26-2022  18:18:37.808 ] [gr_initNewLevelCallback] GC fill: 1
+ [ 10-26-2022  18:18:37.813 ] [gr_initNewLevelCallback] Initialized data on level: 2
+ [ 10-26-2022  18:18:37.814 ] [gr_initNewLevelCallback] GC fill: 2
+ [ 10-26-2022  18:18:37.815 ] memory: /proc vsize    (MB):      225.22 (min)        225.42 (max)        225.36 (avg)
+ [ 10-26-2022  18:18:37.815 ] memory: /proc rss      (MB):       41.72 (min)         42.05 (max)         41.84 (avg)
+ [ 10-26-2022  18:18:37.815 ] memory: /proc vsize    (MB):      225.22 (min)        225.42 (max)        225.36 (avg)
+ [ 10-26-2022  18:18:37.815 ] memory: /proc rss      (MB):       41.72 (min)         42.05 (max)         41.84 (avg)
+ [ 10-26-2022  18:18:37.815 ] memory: /proc vsize    (MB):      225.22 (min)        225.42 (max)        225.36 (avg)
+ [ 10-26-2022  18:18:37.815 ] memory: /proc rss      (MB):       41.72 (min)         42.05 (max)         41.84 (avg)
+ [ 10-26-2022  18:18:37.839 ] [IO_writeCheckpoint] open: type=checkpoint name=INS_Channel_Flow_hdf5_chk_0000
+ [ 10-26-2022  18:18:37.862 ] [io_writeData]: wrote     800          blocks
+ [ 10-26-2022  18:18:37.862 ] [IO_writeCheckpoint] close: type=checkpoint name=INS_Channel_Flow_hdf5_chk_0000
+ [ 10-26-2022  18:18:37.863 ] [IO_writePlotfile] open: type=plotfile name=INS_Channel_Flow_hdf5_plt_cnt_0000
+ [ 10-26-2022  18:18:37.868 ] [io_writeData]: wrote     800          blocks
+ [ 10-26-2022  18:18:37.870 ] [IO_writePlotfile] close: type=plotfile name=INS_Channel_Flow_hdf5_plt_cnt_0000
+ [ 10-26-2022  18:18:37.870 ] memory: /proc vsize    (MB):      228.95 (min)        275.52 (max)        238.27 (avg)
+ [ 10-26-2022  18:18:37.870 ] memory: /proc rss      (MB):       46.90 (min)         50.12 (max)         47.57 (avg)
+ [ 10-26-2022  18:18:37.870 ] [Driver_evolveAll]: Entering evolution loop
+ [ 10-26-2022  18:18:37.870 ] step: n=1 t=0.000000E+00 dt=1.000000E-03
+ INFO: Grid_fillGuardCells is ignoring masking.
+ [ 10-26-2022  18:18:37.879 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:37.886 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:37.936 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:37.937 ] step: n=2 t=1.000000E-03 dt=1.000000E-03
+ [ 10-26-2022  18:18:37.946 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:37.952 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.000 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.002 ] step: n=3 t=2.000000E-03 dt=1.000000E-03
+ [ 10-26-2022  18:18:38.010 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.017 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.062 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.064 ] step: n=4 t=3.000000E-03 dt=1.000000E-03
+ [ 10-26-2022  18:18:38.072 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.079 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.124 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.126 ] step: n=5 t=4.000000E-03 dt=1.000000E-03
+ [ 10-26-2022  18:18:38.134 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.141 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.187 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.188 ] step: n=6 t=5.000000E-03 dt=1.000000E-03
+ [ 10-26-2022  18:18:38.197 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.203 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.249 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.251 ] step: n=7 t=6.000000E-03 dt=1.000000E-03
+ [ 10-26-2022  18:18:38.259 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.266 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.311 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.313 ] step: n=8 t=7.000000E-03 dt=1.000000E-03
+ [ 10-26-2022  18:18:38.321 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.328 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.374 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.375 ] step: n=9 t=8.000000E-03 dt=1.000000E-03
+ [ 10-26-2022  18:18:38.383 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.390 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.436 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.437 ] step: n=10 t=9.000000E-03 dt=1.000000E-03
+ [ 10-26-2022  18:18:38.446 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.452 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.498 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.500 ] step: n=11 t=1.000000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:38.508 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.515 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.560 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.562 ] step: n=12 t=1.100000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:38.570 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.577 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.623 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.624 ] step: n=13 t=1.200000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:38.633 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.639 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.685 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.687 ] step: n=14 t=1.300000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:38.695 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.702 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.747 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.749 ] step: n=15 t=1.400000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:38.757 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.764 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.812 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.813 ] step: n=16 t=1.500000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:38.821 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.828 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.874 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.876 ] step: n=17 t=1.600000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:38.884 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.891 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.937 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.938 ] step: n=18 t=1.700000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:38.947 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.953 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:38.999 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.000 ] step: n=19 t=1.800000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:39.009 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.016 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.061 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.063 ] step: n=20 t=1.900000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:39.072 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.079 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.125 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.126 ] step: n=21 t=2.000000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:39.135 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.141 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.187 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.189 ] step: n=22 t=2.100000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:39.197 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.204 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.250 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.251 ] step: n=23 t=2.200000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:39.260 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.266 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.312 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.313 ] step: n=24 t=2.300000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:39.322 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.328 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.374 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.376 ] step: n=25 t=2.400000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:39.384 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.390 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.436 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.438 ] step: n=26 t=2.500000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:39.446 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.453 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.498 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.500 ] step: n=27 t=2.600000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:39.508 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.515 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.561 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.562 ] step: n=28 t=2.700000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:39.571 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.577 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.623 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.625 ] step: n=29 t=2.800000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:39.633 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.640 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.685 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.687 ] step: n=30 t=2.900000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:39.695 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.702 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.747 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.749 ] step: n=31 t=3.000000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:39.757 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.764 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.810 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.811 ] step: n=32 t=3.100000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:39.820 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.826 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.872 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.874 ] step: n=33 t=3.200000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:39.882 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.889 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.934 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.936 ] step: n=34 t=3.300000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:39.944 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.951 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.997 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:39.998 ] step: n=35 t=3.400000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:40.007 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.013 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.059 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.061 ] step: n=36 t=3.500000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:40.069 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.076 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.121 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.123 ] step: n=37 t=3.600000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:40.131 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.138 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.184 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.185 ] step: n=38 t=3.700000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:40.194 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.200 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.246 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.248 ] step: n=39 t=3.800000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:40.256 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.263 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.309 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.310 ] step: n=40 t=3.900000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:40.318 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.325 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.371 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.372 ] step: n=41 t=4.000000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:40.381 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.387 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.433 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.435 ] step: n=42 t=4.100000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:40.443 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.450 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.495 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.497 ] step: n=43 t=4.200000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:40.505 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.512 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.558 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.559 ] step: n=44 t=4.300000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:40.568 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.574 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.620 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.622 ] step: n=45 t=4.400000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:40.630 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.637 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.683 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.684 ] step: n=46 t=4.500000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:40.693 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.699 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.745 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.747 ] step: n=47 t=4.600000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:40.755 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.762 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.808 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.809 ] step: n=48 t=4.700000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:40.818 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.824 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.870 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.872 ] step: n=49 t=4.800000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:40.880 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.887 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.932 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.934 ] step: n=50 t=4.900000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:40.942 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.949 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.995 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:40.998 ] [IO_writePlotfile] open: type=plotfile name=INS_Channel_Flow_hdf5_plt_cnt_0001
+ [ 10-26-2022  18:18:41.003 ] [io_writeData]: wrote     800          blocks
+ [ 10-26-2022  18:18:41.003 ] [IO_writePlotfile] close: type=plotfile name=INS_Channel_Flow_hdf5_plt_cnt_0001
+ [ 10-26-2022  18:18:41.004 ] [IO_writeCheckpoint] open: type=checkpoint name=INS_Channel_Flow_hdf5_chk_0001
+ [ 10-26-2022  18:18:41.025 ] [io_writeData]: wrote     800          blocks
+ [ 10-26-2022  18:18:41.025 ] [IO_writeCheckpoint] close: type=checkpoint name=INS_Channel_Flow_hdf5_chk_0001
+ [ 10-26-2022  18:18:41.025 ] step: n=51 t=5.000000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:41.033 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.040 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.086 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.087 ] step: n=52 t=5.100000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:41.096 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.102 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.148 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.150 ] step: n=53 t=5.200000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:41.158 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.165 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.211 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.212 ] step: n=54 t=5.300000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:41.220 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.227 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.273 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.275 ] step: n=55 t=5.400000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:41.283 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.290 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.336 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.337 ] step: n=56 t=5.500000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:41.346 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.353 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.400 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.402 ] step: n=57 t=5.600000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:41.410 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.417 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.462 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.464 ] step: n=58 t=5.700000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:41.472 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.479 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.525 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.526 ] step: n=59 t=5.800000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:41.535 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.542 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.587 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.589 ] step: n=60 t=5.900000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:41.597 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.604 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.650 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.651 ] step: n=61 t=6.000000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:41.660 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.667 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.713 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.714 ] step: n=62 t=6.100000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:41.723 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.729 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.775 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.777 ] step: n=63 t=6.200000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:41.785 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.792 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.837 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.839 ] step: n=64 t=6.300000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:41.847 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.854 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.900 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.902 ] step: n=65 t=6.400000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:41.910 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.917 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.962 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.964 ] step: n=66 t=6.500000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:41.972 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:41.979 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.025 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.026 ] step: n=67 t=6.600000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:42.035 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.042 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.087 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.089 ] step: n=68 t=6.700000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:42.097 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.104 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.150 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.151 ] step: n=69 t=6.800000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:42.160 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.166 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.212 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.214 ] step: n=70 t=6.900000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:42.222 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.229 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.275 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.276 ] step: n=71 t=7.000000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:42.285 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.291 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.337 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.339 ] step: n=72 t=7.100000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:42.347 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.354 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.400 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.401 ] step: n=73 t=7.200000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:42.410 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.416 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.462 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.464 ] step: n=74 t=7.300000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:42.472 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.479 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.525 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.526 ] step: n=75 t=7.400000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:42.535 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.541 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.587 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.589 ] step: n=76 t=7.500000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:42.597 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.604 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.650 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.651 ] step: n=77 t=7.600000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:42.660 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.666 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.712 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.714 ] step: n=78 t=7.700000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:42.722 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.729 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.775 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.776 ] step: n=79 t=7.800000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:42.784 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.791 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.837 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.838 ] step: n=80 t=7.900000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:42.847 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.854 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.899 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.901 ] step: n=81 t=8.000000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:42.909 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.916 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.962 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.963 ] step: n=82 t=8.100000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:42.972 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:42.978 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.024 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.026 ] step: n=83 t=8.200000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:43.034 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.041 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.087 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.088 ] step: n=84 t=8.300000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:43.097 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.103 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.149 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.151 ] step: n=85 t=8.400000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:43.159 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.166 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.212 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.213 ] step: n=86 t=8.500000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:43.222 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.228 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.274 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.276 ] step: n=87 t=8.600000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:43.284 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.291 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.337 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.338 ] step: n=88 t=8.700000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:43.347 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.353 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.400 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.401 ] step: n=89 t=8.800000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:43.410 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.416 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.462 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.464 ] step: n=90 t=8.900000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:43.472 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.479 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.525 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.526 ] step: n=91 t=9.000000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:43.535 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.541 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.587 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.589 ] step: n=92 t=9.100000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:43.597 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.604 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.650 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.652 ] step: n=93 t=9.200000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:43.660 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.667 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.713 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.714 ] step: n=94 t=9.300000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:43.723 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.729 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.775 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.777 ] step: n=95 t=9.400000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:43.785 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.792 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.839 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.841 ] step: n=96 t=9.500000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:43.849 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.856 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.902 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.903 ] step: n=97 t=9.600000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:43.912 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.919 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.965 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.966 ] step: n=98 t=9.700000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:43.975 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:43.981 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.027 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.029 ] step: n=99 t=9.800000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:44.037 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.044 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.090 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.092 ] step: n=100 t=9.900000E-02 dt=1.000000E-03
+ [ 10-26-2022  18:18:44.100 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.107 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.152 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.155 ] [IO_writePlotfile] open: type=plotfile name=INS_Channel_Flow_hdf5_plt_cnt_0002
+ [ 10-26-2022  18:18:44.161 ] [io_writeData]: wrote     800          blocks
+ [ 10-26-2022  18:18:44.161 ] [IO_writePlotfile] close: type=plotfile name=INS_Channel_Flow_hdf5_plt_cnt_0002
+ [ 10-26-2022  18:18:44.162 ] [IO_writeCheckpoint] open: type=checkpoint name=INS_Channel_Flow_hdf5_chk_0002
+ [ 10-26-2022  18:18:44.181 ] [io_writeData]: wrote     800          blocks
+ [ 10-26-2022  18:18:44.182 ] [IO_writeCheckpoint] close: type=checkpoint name=INS_Channel_Flow_hdf5_chk_0002
+ [ 10-26-2022  18:18:44.182 ] step: n=101 t=1.000000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:44.190 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.197 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.242 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.244 ] step: n=102 t=1.010000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:44.252 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.259 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.305 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.306 ] step: n=103 t=1.020000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:44.315 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.322 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.367 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.369 ] step: n=104 t=1.030000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:44.377 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.384 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.430 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.431 ] step: n=105 t=1.040000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:44.440 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.447 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.492 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.494 ] step: n=106 t=1.050000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:44.502 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.509 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.555 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.557 ] step: n=107 t=1.060000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:44.565 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.572 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.618 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.619 ] step: n=108 t=1.070000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:44.628 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.634 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.681 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.682 ] step: n=109 t=1.080000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:44.690 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.697 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.743 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.745 ] step: n=110 t=1.090000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:44.753 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.760 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.806 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.808 ] step: n=111 t=1.100000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:44.816 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.823 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.869 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.870 ] step: n=112 t=1.110000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:44.879 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.885 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.931 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.933 ] step: n=113 t=1.120000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:44.941 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.948 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.994 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:44.995 ] step: n=114 t=1.130000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:45.004 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.010 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.056 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.058 ] step: n=115 t=1.140000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:45.066 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.073 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.119 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.120 ] step: n=116 t=1.150000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:45.129 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.135 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.181 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.183 ] step: n=117 t=1.160000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:45.191 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.198 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.244 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.245 ] step: n=118 t=1.170000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:45.254 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.260 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.306 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.308 ] step: n=119 t=1.180000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:45.316 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.323 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.370 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.372 ] step: n=120 t=1.190000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:45.380 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.387 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.436 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.437 ] step: n=121 t=1.200000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:45.446 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.453 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.498 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.500 ] step: n=122 t=1.210000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:45.508 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.515 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.561 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.563 ] step: n=123 t=1.220000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:45.571 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.578 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.623 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.625 ] step: n=124 t=1.230000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:45.633 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.640 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.686 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.687 ] step: n=125 t=1.240000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:45.696 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.703 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.749 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.750 ] step: n=126 t=1.250000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:45.759 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.765 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.811 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.813 ] step: n=127 t=1.260000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:45.821 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.828 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.874 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.875 ] step: n=128 t=1.270000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:45.884 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.890 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.936 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.938 ] step: n=129 t=1.280000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:45.946 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.953 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:45.999 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.000 ] step: n=130 t=1.290000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:46.009 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.016 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.062 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.063 ] step: n=131 t=1.300000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:46.072 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.078 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.124 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.126 ] step: n=132 t=1.310000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:46.134 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.141 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.187 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.188 ] step: n=133 t=1.320000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:46.197 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.203 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.250 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.251 ] step: n=134 t=1.330000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:46.260 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.266 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.312 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.314 ] step: n=135 t=1.340000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:46.322 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.329 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.375 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.376 ] step: n=136 t=1.350000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:46.385 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.391 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.437 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.439 ] step: n=137 t=1.360000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:46.447 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.454 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.500 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.501 ] step: n=138 t=1.370000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:46.509 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.516 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.562 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.564 ] step: n=139 t=1.380000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:46.572 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.579 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.624 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.626 ] step: n=140 t=1.390000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:46.634 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.641 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.687 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.689 ] step: n=141 t=1.400000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:46.697 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.704 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.750 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.751 ] step: n=142 t=1.410000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:46.760 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.766 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.812 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.814 ] step: n=143 t=1.420000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:46.822 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.829 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.875 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.876 ] step: n=144 t=1.430000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:46.885 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.891 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.937 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.939 ] step: n=145 t=1.440000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:46.947 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:46.954 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.000 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.001 ] step: n=146 t=1.450000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:47.010 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.016 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.062 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.064 ] step: n=147 t=1.460000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:47.072 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.079 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.125 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.126 ] step: n=148 t=1.470000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:47.135 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.141 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.187 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.189 ] step: n=149 t=1.480000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:47.197 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.204 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.250 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.251 ] step: n=150 t=1.490000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:47.260 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.266 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.312 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.315 ] [IO_writePlotfile] open: type=plotfile name=INS_Channel_Flow_hdf5_plt_cnt_0003
+ [ 10-26-2022  18:18:47.320 ] [io_writeData]: wrote     800          blocks
+ [ 10-26-2022  18:18:47.320 ] [IO_writePlotfile] close: type=plotfile name=INS_Channel_Flow_hdf5_plt_cnt_0003
+ [ 10-26-2022  18:18:47.321 ] [IO_writeCheckpoint] open: type=checkpoint name=INS_Channel_Flow_hdf5_chk_0003
+ [ 10-26-2022  18:18:47.341 ] [io_writeData]: wrote     800          blocks
+ [ 10-26-2022  18:18:47.341 ] [IO_writeCheckpoint] close: type=checkpoint name=INS_Channel_Flow_hdf5_chk_0003
+ [ 10-26-2022  18:18:47.341 ] step: n=151 t=1.500000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:47.349 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.356 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.407 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.408 ] step: n=152 t=1.510000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:47.417 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.423 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.469 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.471 ] step: n=153 t=1.520000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:47.479 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.486 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.532 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.534 ] step: n=154 t=1.530000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:47.542 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.549 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.595 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.596 ] step: n=155 t=1.540000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:47.605 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.611 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.662 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.664 ] step: n=156 t=1.550000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:47.672 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.679 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.724 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.726 ] step: n=157 t=1.560000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:47.734 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.741 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.787 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.789 ] step: n=158 t=1.570000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:47.797 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.804 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.850 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.851 ] step: n=159 t=1.580000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:47.860 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.866 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.912 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.914 ] step: n=160 t=1.590000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:47.922 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.929 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.975 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.977 ] step: n=161 t=1.600000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:47.985 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:47.992 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.038 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.039 ] step: n=162 t=1.610000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:48.048 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.055 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.101 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.102 ] step: n=163 t=1.620000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:48.111 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.118 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.163 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.165 ] step: n=164 t=1.630000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:48.173 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.180 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.226 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.228 ] step: n=165 t=1.640000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:48.236 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.243 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.289 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.291 ] step: n=166 t=1.650000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:48.299 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.306 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.353 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.355 ] step: n=167 t=1.660000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:48.363 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.370 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.416 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.418 ] step: n=168 t=1.670000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:48.426 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.433 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.479 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.480 ] step: n=169 t=1.680000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:48.489 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.495 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.541 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.543 ] step: n=170 t=1.690000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:48.551 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.558 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.604 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.605 ] step: n=171 t=1.700000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:48.614 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.621 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.666 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.668 ] step: n=172 t=1.710000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:48.676 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.683 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.729 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.731 ] step: n=173 t=1.720000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:48.739 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.746 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.792 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.793 ] step: n=174 t=1.730000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:48.802 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.808 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.854 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.856 ] step: n=175 t=1.740000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:48.864 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.871 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.917 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.918 ] step: n=176 t=1.750000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:48.927 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.933 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.980 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.981 ] step: n=177 t=1.760000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:48.990 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:48.996 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.042 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.044 ] step: n=178 t=1.770000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:49.052 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.059 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.105 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.106 ] step: n=179 t=1.780000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:49.115 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.121 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.167 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.169 ] step: n=180 t=1.790000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:49.177 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.184 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.230 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.231 ] step: n=181 t=1.800000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:49.240 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.246 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.292 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.294 ] step: n=182 t=1.810000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:49.302 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.309 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.355 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.356 ] step: n=183 t=1.820000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:49.365 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.371 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.417 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.419 ] step: n=184 t=1.830000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:49.427 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.434 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.480 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.481 ] step: n=185 t=1.840000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:49.490 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.497 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.543 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.544 ] step: n=186 t=1.850000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:49.553 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.560 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.605 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.607 ] step: n=187 t=1.860000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:49.615 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.622 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.668 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.669 ] step: n=188 t=1.870000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:49.678 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.685 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.730 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.732 ] step: n=189 t=1.880000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:49.740 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.747 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.793 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.794 ] step: n=190 t=1.890000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:49.803 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.810 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.855 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.857 ] step: n=191 t=1.900000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:49.865 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.872 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.918 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.920 ] step: n=192 t=1.910000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:49.928 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.935 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.981 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.982 ] step: n=193 t=1.920000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:49.991 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:49.997 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.043 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.045 ] step: n=194 t=1.930000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:50.053 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.060 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.106 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.107 ] step: n=195 t=1.940000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:50.116 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.124 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.170 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.172 ] step: n=196 t=1.950000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:50.180 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.187 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.233 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.235 ] step: n=197 t=1.960000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:50.243 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.250 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.296 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.298 ] step: n=198 t=1.970000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:50.306 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.313 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.358 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.360 ] step: n=199 t=1.980000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:50.369 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.375 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.421 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.423 ] step: n=200 t=1.990000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:50.431 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.438 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.486 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.488 ] [IO_writePlotfile] open: type=plotfile name=INS_Channel_Flow_hdf5_plt_cnt_0004
+ [ 10-26-2022  18:18:50.494 ] [io_writeData]: wrote     800          blocks
+ [ 10-26-2022  18:18:50.494 ] [IO_writePlotfile] close: type=plotfile name=INS_Channel_Flow_hdf5_plt_cnt_0004
+ [ 10-26-2022  18:18:50.495 ] [IO_writeCheckpoint] open: type=checkpoint name=INS_Channel_Flow_hdf5_chk_0004
+ [ 10-26-2022  18:18:50.515 ] [io_writeData]: wrote     800          blocks
+ [ 10-26-2022  18:18:50.515 ] [IO_writeCheckpoint] close: type=checkpoint name=INS_Channel_Flow_hdf5_chk_0004
+ [ 10-26-2022  18:18:50.515 ] step: n=201 t=2.000000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:50.523 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.530 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.581 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.582 ] step: n=202 t=2.010000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:50.591 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.598 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.647 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.649 ] step: n=203 t=2.020000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:50.657 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.664 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.710 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.711 ] step: n=204 t=2.030000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:50.719 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.726 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.772 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.774 ] step: n=205 t=2.040000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:50.782 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.789 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.835 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.837 ] step: n=206 t=2.050000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:50.845 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.852 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.898 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.899 ] step: n=207 t=2.060000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:50.908 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.914 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.960 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.962 ] step: n=208 t=2.070000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:50.970 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:50.977 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.023 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.025 ] step: n=209 t=2.080000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:51.033 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.040 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.086 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.087 ] step: n=210 t=2.090000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:51.096 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.102 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.148 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.150 ] step: n=211 t=2.100000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:51.158 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.165 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.213 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.215 ] step: n=212 t=2.110000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:51.223 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.230 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.276 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.277 ] step: n=213 t=2.120000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:51.286 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.292 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.338 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.340 ] step: n=214 t=2.130000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:51.348 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.355 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.401 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.403 ] step: n=215 t=2.140000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:51.411 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.418 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.464 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.466 ] step: n=216 t=2.150000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:51.474 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.481 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.527 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.528 ] step: n=217 t=2.160000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:51.537 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.544 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.589 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.591 ] step: n=218 t=2.170000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:51.599 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.606 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.652 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.654 ] step: n=219 t=2.180000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:51.662 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.669 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.715 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.716 ] step: n=220 t=2.190000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:51.725 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.732 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.777 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.779 ] step: n=221 t=2.200000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:51.787 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.794 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.840 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.842 ] step: n=222 t=2.210000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:51.850 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.857 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.903 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.905 ] step: n=223 t=2.220000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:51.913 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.920 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.966 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.967 ] step: n=224 t=2.230000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:51.976 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:51.982 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.028 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.030 ] step: n=225 t=2.240000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:52.038 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.045 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.091 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.092 ] step: n=226 t=2.250000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:52.101 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.107 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.153 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.155 ] step: n=227 t=2.260000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:52.163 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.170 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.216 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.218 ] step: n=228 t=2.270000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:52.226 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.233 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.278 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.280 ] step: n=229 t=2.280000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:52.288 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.295 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.345 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.347 ] step: n=230 t=2.290000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:52.355 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.362 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.408 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.410 ] step: n=231 t=2.300000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:52.418 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.425 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.471 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.472 ] step: n=232 t=2.310000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:52.481 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.487 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.533 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.535 ] step: n=233 t=2.320000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:52.544 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.551 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.597 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.599 ] step: n=234 t=2.330000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:52.607 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.614 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.660 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.661 ] step: n=235 t=2.340000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:52.670 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.676 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.723 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.724 ] step: n=236 t=2.350000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:52.733 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.739 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.785 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.787 ] step: n=237 t=2.360000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:52.795 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.802 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.848 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.850 ] step: n=238 t=2.370000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:52.858 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.865 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.911 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.912 ] step: n=239 t=2.380000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:52.921 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.927 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.973 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.975 ] step: n=240 t=2.390000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:52.983 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:52.990 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.038 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.040 ] step: n=241 t=2.400000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:53.048 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.055 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.107 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.108 ] step: n=242 t=2.410000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:53.117 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.123 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.169 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.171 ] step: n=243 t=2.420000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:53.179 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.186 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.232 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.234 ] step: n=244 t=2.430000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:53.242 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.249 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.295 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.296 ] step: n=245 t=2.440000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:53.305 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.311 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.357 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.359 ] step: n=246 t=2.450000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:53.367 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.374 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.423 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.424 ] step: n=247 t=2.460000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:53.432 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.439 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.485 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.487 ] step: n=248 t=2.470000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:53.495 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.502 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.548 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.549 ] step: n=249 t=2.480000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:53.558 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.564 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.610 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.612 ] step: n=250 t=2.490000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:53.620 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.627 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.673 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.676 ] [IO_writePlotfile] open: type=plotfile name=INS_Channel_Flow_hdf5_plt_cnt_0005
+ [ 10-26-2022  18:18:53.681 ] [io_writeData]: wrote     800          blocks
+ [ 10-26-2022  18:18:53.682 ] [IO_writePlotfile] close: type=plotfile name=INS_Channel_Flow_hdf5_plt_cnt_0005
+ [ 10-26-2022  18:18:53.683 ] [IO_writeCheckpoint] open: type=checkpoint name=INS_Channel_Flow_hdf5_chk_0005
+ [ 10-26-2022  18:18:53.703 ] [io_writeData]: wrote     800          blocks
+ [ 10-26-2022  18:18:53.704 ] [IO_writeCheckpoint] close: type=checkpoint name=INS_Channel_Flow_hdf5_chk_0005
+ [ 10-26-2022  18:18:53.704 ] step: n=251 t=2.500000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:53.712 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.719 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.765 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.766 ] step: n=252 t=2.510000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:53.775 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.781 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.827 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.829 ] step: n=253 t=2.520000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:53.837 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.844 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.890 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.891 ] step: n=254 t=2.530000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:53.900 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.907 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.953 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.954 ] step: n=255 t=2.540000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:53.963 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:53.969 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.015 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.017 ] step: n=256 t=2.550000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:54.025 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.032 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.078 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.079 ] step: n=257 t=2.560000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:54.088 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.095 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.141 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.142 ] step: n=258 t=2.570000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:54.151 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.157 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.203 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.205 ] step: n=259 t=2.580000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:54.213 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.220 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.266 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.268 ] step: n=260 t=2.590000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:54.276 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.283 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.329 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.330 ] step: n=261 t=2.600000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:54.339 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.345 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.391 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.393 ] step: n=262 t=2.610000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:54.401 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.408 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.454 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.456 ] step: n=263 t=2.620000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:54.465 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.471 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.517 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.519 ] step: n=264 t=2.630000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:54.527 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.534 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.580 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.581 ] step: n=265 t=2.640000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:54.590 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.596 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.642 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.644 ] step: n=266 t=2.650000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:54.652 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.659 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.705 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.707 ] step: n=267 t=2.660000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:54.715 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.722 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.768 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.769 ] step: n=268 t=2.670000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:54.778 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.784 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.830 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.832 ] step: n=269 t=2.680000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:54.840 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.847 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.893 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.894 ] step: n=270 t=2.690000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:54.903 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.910 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.956 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.957 ] step: n=271 t=2.700000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:54.966 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:54.972 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.018 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.020 ] step: n=272 t=2.710000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:55.028 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.035 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.081 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.083 ] step: n=273 t=2.720000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:55.091 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.098 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.144 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.145 ] step: n=274 t=2.730000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:55.154 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.161 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.206 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.208 ] step: n=275 t=2.740000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:55.216 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.223 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.269 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.271 ] step: n=276 t=2.750000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:55.279 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.286 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.332 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.333 ] step: n=277 t=2.760000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:55.342 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.349 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.395 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.396 ] step: n=278 t=2.770000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:55.404 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.411 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.457 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.459 ] step: n=279 t=2.780000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:55.467 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.474 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.520 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.522 ] step: n=280 t=2.790000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:55.530 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.537 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.583 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.584 ] step: n=281 t=2.800000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:55.593 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.599 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.645 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.647 ] step: n=282 t=2.810000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:55.655 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.662 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.708 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.709 ] step: n=283 t=2.820000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:55.718 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.724 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.770 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.772 ] step: n=284 t=2.830000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:55.780 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.787 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.833 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.835 ] step: n=285 t=2.840000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:55.843 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.850 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.896 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.897 ] step: n=286 t=2.850000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:55.906 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.913 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.958 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.960 ] step: n=287 t=2.860000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:55.969 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:55.975 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.021 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.023 ] step: n=288 t=2.870000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:56.031 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.038 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.088 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.090 ] step: n=289 t=2.880000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:56.098 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.105 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.154 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.156 ] step: n=290 t=2.890000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:56.165 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.171 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.217 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.219 ] step: n=291 t=2.900000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:56.227 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.234 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.280 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.281 ] step: n=292 t=2.910000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:56.290 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.297 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.342 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.344 ] step: n=293 t=2.920000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:56.352 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.359 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.405 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.407 ] step: n=294 t=2.930000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:56.415 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.422 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.468 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.470 ] step: n=295 t=2.940000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:56.478 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.485 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.531 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.532 ] step: n=296 t=2.950000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:56.541 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.547 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.593 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.595 ] step: n=297 t=2.960000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:56.603 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.610 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.656 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.658 ] step: n=298 t=2.970000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:56.666 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.673 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.719 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.721 ] step: n=299 t=2.980000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:56.729 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.736 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.781 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.783 ] step: n=300 t=2.990000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:56.792 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.798 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.844 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.847 ] [IO_writePlotfile] open: type=plotfile name=INS_Channel_Flow_hdf5_plt_cnt_0006
+ [ 10-26-2022  18:18:56.853 ] [io_writeData]: wrote     800          blocks
+ [ 10-26-2022  18:18:56.853 ] [IO_writePlotfile] close: type=plotfile name=INS_Channel_Flow_hdf5_plt_cnt_0006
+ [ 10-26-2022  18:18:56.853 ] [IO_writeCheckpoint] open: type=checkpoint name=INS_Channel_Flow_hdf5_chk_0006
+ [ 10-26-2022  18:18:56.873 ] [io_writeData]: wrote     800          blocks
+ [ 10-26-2022  18:18:56.874 ] [IO_writeCheckpoint] close: type=checkpoint name=INS_Channel_Flow_hdf5_chk_0006
+ [ 10-26-2022  18:18:56.874 ] step: n=301 t=3.000000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:56.882 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.890 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.937 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.938 ] step: n=302 t=3.010000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:56.946 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:56.953 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.000 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.001 ] step: n=303 t=3.020000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:57.010 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.016 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.064 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.066 ] step: n=304 t=3.030000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:57.075 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.081 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.127 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.129 ] step: n=305 t=3.040000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:57.137 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.144 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.190 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.192 ] step: n=306 t=3.050000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:57.200 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.207 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.252 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.254 ] step: n=307 t=3.060000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:57.262 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.269 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.315 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.317 ] step: n=308 t=3.070000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:57.325 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.332 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.378 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.380 ] step: n=309 t=3.080000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:57.388 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.395 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.441 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.442 ] step: n=310 t=3.090000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:57.451 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.457 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.503 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.505 ] step: n=311 t=3.100000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:57.513 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.520 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.566 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.568 ] step: n=312 t=3.110000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:57.576 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.583 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.629 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.630 ] step: n=313 t=3.120000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:57.639 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.646 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.692 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.693 ] step: n=314 t=3.130000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:57.702 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.709 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.754 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.756 ] step: n=315 t=3.140000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:57.764 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.771 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.817 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.819 ] step: n=316 t=3.150000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:57.827 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.834 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.880 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.882 ] step: n=317 t=3.160000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:57.890 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.897 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.943 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.944 ] step: n=318 t=3.170000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:57.953 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:57.959 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.005 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.007 ] step: n=319 t=3.180000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:58.015 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.022 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.068 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.070 ] step: n=320 t=3.190000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:58.078 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.085 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.131 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.132 ] step: n=321 t=3.200000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:58.141 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.148 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.194 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.195 ] step: n=322 t=3.210000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:58.204 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.210 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.256 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.258 ] step: n=323 t=3.220000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:58.266 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.273 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.319 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.321 ] step: n=324 t=3.230000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:58.329 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.336 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.382 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.383 ] step: n=325 t=3.240000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:58.392 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.399 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.445 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.446 ] step: n=326 t=3.250000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:58.455 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.461 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.507 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.509 ] step: n=327 t=3.260000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:58.517 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.524 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.570 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.572 ] step: n=328 t=3.270000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:58.580 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.587 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.633 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.634 ] step: n=329 t=3.280000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:58.643 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.649 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.695 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.697 ] step: n=330 t=3.290000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:58.705 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.712 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.758 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.760 ] step: n=331 t=3.300000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:58.768 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.775 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.821 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.823 ] step: n=332 t=3.310000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:58.831 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.838 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.884 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.885 ] step: n=333 t=3.320000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:58.894 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.900 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.946 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.948 ] step: n=334 t=3.330000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:58.956 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:58.963 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.009 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.010 ] step: n=335 t=3.340000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:59.019 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.026 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.072 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.073 ] step: n=336 t=3.350000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:59.082 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.088 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.134 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.136 ] step: n=337 t=3.360000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:59.144 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.151 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.197 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.199 ] step: n=338 t=3.370000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:59.207 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.214 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.260 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.261 ] step: n=339 t=3.380000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:59.270 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.276 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.322 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.324 ] step: n=340 t=3.390000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:59.332 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.339 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.385 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.387 ] step: n=341 t=3.400000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:59.395 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.402 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.448 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.450 ] step: n=342 t=3.410000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:59.458 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.465 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.511 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.512 ] step: n=343 t=3.420000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:59.521 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.527 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.573 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.575 ] step: n=344 t=3.430000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:59.583 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.590 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.636 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.638 ] step: n=345 t=3.440000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:59.646 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.653 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.699 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.701 ] step: n=346 t=3.450000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:59.709 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.716 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.762 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.763 ] step: n=347 t=3.460000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:59.772 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.778 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.824 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.826 ] step: n=348 t=3.470000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:59.834 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.841 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.887 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.889 ] step: n=349 t=3.480000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:59.897 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.904 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.950 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.952 ] step: n=350 t=3.490000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:18:59.960 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:18:59.967 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:19:00.013 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:19:00.016 ] [IO_writePlotfile] open: type=plotfile name=INS_Channel_Flow_hdf5_plt_cnt_0007
+ [ 10-26-2022  18:19:00.021 ] [io_writeData]: wrote     800          blocks
+ [ 10-26-2022  18:19:00.021 ] [IO_writePlotfile] close: type=plotfile name=INS_Channel_Flow_hdf5_plt_cnt_0007
+ [ 10-26-2022  18:19:00.022 ] [IO_writeCheckpoint] open: type=checkpoint name=INS_Channel_Flow_hdf5_chk_0007
+ [ 10-26-2022  18:19:00.042 ] [io_writeData]: wrote     800          blocks
+ [ 10-26-2022  18:19:00.042 ] [IO_writeCheckpoint] close: type=checkpoint name=INS_Channel_Flow_hdf5_chk_0007
+ [ 10-26-2022  18:19:00.042 ] step: n=351 t=3.500000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:19:00.050 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:19:00.057 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:19:00.103 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:19:00.105 ] step: n=352 t=3.510000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:19:00.113 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:19:00.120 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:19:00.166 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
+ [ 10-26-2022  18:19:00.168 ] step: n=353 t=3.520000E-01 dt=1.000000E-03
+ [ 10-26-2022  18:19:00.176 ] [Grid_fillGuardCells] GC fill/GC EoS up to level: 2
