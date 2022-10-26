@@ -1,3 +1,6 @@
+# load singularity module
+# module load singularity
+
 # load openmpi module
 module load openmpi-4.1.1
 

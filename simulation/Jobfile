@@ -12,3 +12,6 @@ job.input = ["flash.par"]
 
 # target file
 job.target = "Maplefile"
+
+# list of setup scripts
+job.setup = ["buildImage.sh"]
