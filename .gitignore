@@ -3,6 +3,7 @@ INS*
 slurm*
 amr_*
 *.png
+*.avi
 !icon.png
 Maplefile
 !simulation/Maplefile

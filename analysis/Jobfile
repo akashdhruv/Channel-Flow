@@ -5,4 +5,4 @@
 schedular.command = "bash"
 
 # configuration variable
-job.submit = ["velProfile.sh"]
+job.submit = ["postProcess.sh"]
