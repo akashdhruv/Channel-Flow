@@ -33,3 +33,26 @@ $ tree Channel-Flow
 ```
 
 ## Usage
+
+Once a user has installed necessary libaries/tools, i.e., Jobrunner, Maple, MPI, and ParaView, and designed their customized `environment.sh`, they can submit a simulation by running the following command from the project root directory,
+
+```
+jobrunner submit simulation/neumann
+jobrunner submit simulation/outflow/buffer01
+.
+.
+.
+```
+
+Make sure to edit Jobfiles as desired to change/update your schedular configuration.
+
+TIP: use `--show` with `jobrunner setup` and `jobrunner submit` to see the parsed configuration for a working directory derived from Jobfiles along the directory tree.
+
+To visualize data using ParaView run following from the working directory of a job run,
+
+```
+flashkit create xdmf -b <begin_number> -e <end_number>
+```
+
+The `<begin_number>` and `<end_number>` refer to the files containing the pattern `*_hdf5_plt_cnt_*`. The resulting `*.xmf` file is ParaView compatible.
+
