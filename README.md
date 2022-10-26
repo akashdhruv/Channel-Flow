@@ -8,4 +8,34 @@ This repository contains a lab notebook to test/demonstrate effects of a modifie
 
 ## Organization
 
+```
+$ tree Boiling-Simulations
+
+├── Jobfile
+├── environment.sh
+├── sites
+    ├── hello
+        ├── Makefile.h
+├── software
+    ├── Jobfile
+    ├── Flash-X
+    ├── AMReX
+    ├── FlashKit
+    ├── HDF5
+├── simulation
+    ├── PoolBoiling
+        ├── Jobfile
+        ├── flashOptions.sh
+        ├── example2D
+            ├── Jobfile
+            ├── flashOptions.sh
+            ├── flashBuild.sh
+            ├── flashRun.sh
+            ├── flash.par
+    ├── FlowBoiling
+├── analysis
+    ├── Jobfile
+    ├── requirements.txt
+```
+
 ## Usage
