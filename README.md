@@ -39,9 +39,7 @@ Once a user has installed necessary libaries/tools, i.e., Jobrunner, Maple, MPI,
 ```
 jobrunner submit simulation/neumann
 jobrunner submit simulation/outflow/buffer01
-.
-.
-.
+jobrunner submit simulation/outflow/buffer*
 ```
 
 Make sure to edit Jobfiles as desired to change/update your schedular configuration.
