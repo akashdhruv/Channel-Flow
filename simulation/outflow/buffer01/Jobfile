@@ -1,6 +1,6 @@
 # Configuration file for `jobrunner`
 
-job.input = ["flash.par"]
+job.input = ["buffer.par"]
 
 # list/patterns of files to
 # archive and store in the
