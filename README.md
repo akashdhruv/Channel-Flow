@@ -9,30 +9,15 @@ This repository contains a lab notebook to test/demonstrate effects of a modifie
 ## Organization
 
 ```
-$ tree Boiling-Simulations
+$ tree Channel-Flow
 
 ├── Jobfile
 ├── environment.sh
-├── sites
-    ├── hello
-        ├── Makefile.h
-├── software
-    ├── Jobfile
-    ├── Flash-X
-    ├── AMReX
-    ├── FlashKit
-    ├── HDF5
 ├── simulation
-    ├── PoolBoiling
-        ├── Jobfile
-        ├── flashOptions.sh
-        ├── example2D
-            ├── Jobfile
-            ├── flashOptions.sh
-            ├── flashBuild.sh
-            ├── flashRun.sh
-            ├── flash.par
-    ├── FlowBoiling
+    ├── Jobfile
+    ├── flash.par
+    ├── neumann
+    ├── outflow
 ├── analysis
     ├── Jobfile
     ├── requirements.txt
