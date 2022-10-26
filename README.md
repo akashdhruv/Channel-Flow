@@ -16,11 +16,17 @@ $ tree Channel-Flow
 ├── simulation
     ├── Jobfile
     ├── flash.par
+    ├── Maplefile
     ├── neumann
-    ├── outflow
+    ├── outflowf
+        ├── buffer01
+        ├── buffer10
+        ├── buffer15
+        ├── buffer20
 ├── analysis
     ├── Jobfile
     ├── requirements.txt
+    ├── Maplefile
 ```
 
 ## Usage
