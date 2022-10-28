@@ -1,0 +1,11 @@
+# Configuration file for `jobrunner`
+
+# submit scripts
+job.submit = ["outflow.sh"]
+
+# Schedular configuration resources requirement
+# job name etc
+schedular.options = [
+    "#SBATCH --ntasks=5",
+    "#SBATCH -t 0-30:00",
+]

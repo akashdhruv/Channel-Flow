@@ -1,0 +1,32 @@
+#!/bin/bash
+
+#SBATCH --ntasks=5
+#SBATCH -t 0-30:00
+#SBATCH --job-name=neumann
+
+JobWorkDir="/home/akash/jobs/channel-flow/simulation/neumann"
+
+cd /home/akash/jobs/channel-flow
+
+# load singularity module
+# module load singularity
+
+# load openmpi module
+module load openmpi-4.1.1
+
+# load paraview module
+module load paraview-5.10.0
+
+# export project home directory
+export PROJECT_HOME=$(realpath .)
+
+cd /home/akash/jobs/channel-flow/simulation/neumann
+
+# chdir into working directory
+cd $JobWorkDir
+
+# configure maple
+maple config job.target
+
+# run simulations
+mpirun maple container run "/home/run/flashx_neumann -par_file job.input"

@@ -1,0 +1,33 @@
+#!/bin/bash
+
+#SBATCH --ntasks=1
+#SBATCH --time=0-00:30
+#SBATCH --job-name=vel_profile
+
+JobWorkDir="/home/akash/jobs/channel-flow/analysis/OutflowTest2D/velProfile"
+
+cd /home/akash/jobs/channel-flow
+
+# load singularity module
+# if not present in your path
+#
+# module load singularity
+
+# load openmpi module
+module load openmpi-4.1.1
+
+# load paraview module
+module load paraview-5.10.0
+
+# export project home directory
+export PROJECT_HOME=$(realpath .)
+
+cd /home/akash/jobs/channel-flow/analysis/OutflowTest2D
+
+# set environment variable for simulation directory
+export SIMULATION_HOME=$PROJECT_HOME/simulation/OutflowTest2D
+
+cd /home/akash/jobs/channel-flow/analysis/OutflowTest2D/velProfile
+
+# run plot script
+python3 script.py

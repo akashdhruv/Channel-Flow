@@ -1,5 +1,0 @@
-# Configuration file for `jobrunner`
-
-job.input = ["buffer.par"]
-
-schedular.options = ["#SBATCH --job-name=outbuf20"]
