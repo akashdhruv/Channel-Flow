@@ -2,7 +2,7 @@
 
 # <p align="center"> Channel Flow Simulations </p>
 
-This repository contains a lab notebook to demonstrate effects of a modified pressure outflow boundary condition on a simple channel flow simulation using a containerized simlulation built using Flash-X (https://flash-x.org), a multiphysics simulation software instrument.
+This repository contains a lab notebook for a simple channel flow simulation using a containerized simlulation built using Flash-X (https://flash-x.org), a multiphysics simulation software instrument.
 
 ## Dependencies
 
