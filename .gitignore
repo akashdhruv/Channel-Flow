@@ -6,8 +6,6 @@ amr_*
 *.avi
 !icon.png
 Maplefile
-!simulation/Maplefile
-!analysis/Maplefile
-job.target
+!simulation/OutflowTest2D/Maplefile
 unitTest*
 core*

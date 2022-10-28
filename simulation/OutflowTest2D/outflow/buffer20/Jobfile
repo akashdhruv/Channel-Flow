@@ -1,0 +1,7 @@
+# Configuration file for `jobrunner`
+
+job.input = ["buffer.par"]
+
+job.clean = ["*.out", "Maplefile", "INS*"]
+
+schedular.options = ["#SBATCH --job-name=outbuf20"]

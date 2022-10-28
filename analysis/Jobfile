@@ -1,8 +1,0 @@
-# Configuration file for `jobrunner`
-
-# schedular submit command,
-# a simple `sbatch` or `bsub` or `qsub`
-schedular.command = "bash"
-
-# configuration variable
-job.submit = ["postProcess.sh"]

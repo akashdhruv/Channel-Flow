@@ -1,4 +1,6 @@
 # load singularity module
+# if not present in your path
+#
 # module load singularity
 
 # load openmpi module
