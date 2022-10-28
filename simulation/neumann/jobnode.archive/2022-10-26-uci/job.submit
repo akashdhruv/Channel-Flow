@@ -1,0 +1,31 @@
+#!/bin/bash
+
+#SBATCH -A won_lab
+#SBATCH -p standard
+#SBATCH --ntasks=5
+#SBATCH -t 0-30:00
+#SBATCH --job-name=neumann
+
+JobWorkDir="/data/homezvol1/fandi/channel/Channel-Flow/simulation/neumann"
+
+cd /data/homezvol1/fandi/channel/Channel-Flow
+
+# load openmpi module
+module load singularity
+module load openmpi/4.0.3/gcc.8.4.0
+# load paraview module
+#module load paraview-5.10.0
+
+# export project home directory
+export PROJECT_HOME=$(realpath .)
+
+cd /data/homezvol1/fandi/channel/Channel-Flow/simulation/neumann
+
+# chdir into working directory
+cd $JobWorkDir
+
+# configure maple
+maple config job.target
+
+# run simulations
+mpirun maple container run "/home/run/flashx_neumann -par_file job.input"
