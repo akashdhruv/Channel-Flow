@@ -23,13 +23,11 @@ import boxkit.api as boxkit
 basename = "INS_Channel_Flow_hdf5_plt_cnt_"
 
 simdir_list = [
-    os.getenv("SIMULATION_HOME") + os.sep + "reference/jobnode.archive/2022-10-27",
-    #os.getenv("SIMULATION_HOME") + os.sep + "outflow/buffer01",
+    os.getenv("PROJECT_HOME") + os.sep + "simulation/OutflowTest2D/reference/jobnode.archive/2022-10-29-sedona",
 ]
 
 sim_legend = [
     r"Reference",
-    #r"Buffer $1.0$",
 ]
 
 filetag = 400

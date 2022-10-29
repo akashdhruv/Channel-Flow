@@ -11,10 +11,10 @@ from paraview.simple import *
 #### disable automatic camera reset on 'Show'
 paraview.simple._DisableFirstRenderCameraReset()
 
-basename = "INS_Channel_Flow.xmf"
+filename = "simulation/OutflowTest2D/reference/jobnode.archive/2022-10-29-sedona/INS_Channel_Flow.xmf"
 
 filenames=[
-    os.getenv("SIMULATION_HOME") + os.sep + "reference/jobnode.archive/2022-10-27/" + basename,
+    os.getenv("PROJECT_HOME") + os.sep + filename
 ]
 
 # create a new 'XDMF Reader'

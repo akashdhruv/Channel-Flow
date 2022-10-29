@@ -5,7 +5,7 @@
 schedular.command = "sbatch"
 
 schedular.options = [
-    "#SBATCH --ntasks=1",
+    "#SBATCH --ntasks=4",
     "#SBATCH --time=0-00:30",
     "#SBATCH --job-name=vel_animation",
 ]
