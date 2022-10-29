@@ -10,4 +10,6 @@ schedular.options = [
     "#SBATCH --job-name=vel_profile",
 ]
 
+job.clean = ["*.out"]
+
 job.submit = ["run.sh"]
