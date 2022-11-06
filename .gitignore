@@ -1,11 +1,14 @@
 INS*
-!*.log
 slurm*
 amr_*
 *.png
 *.avi
 !icon.png
 Maplefile
-!simulation/OutflowTest2D/Maplefile
 unitTest*
 core*
+__pycache__
+*.ipynb_checkpoints
+!*.log
+!simulation/OutflowTest2D/Maplefile
+!simulation/OutflowTest2D/reference/jobnode.archive/2022-10-29-sedona/INS_Channel_Flow_hdf5_plt_cnt_0400
